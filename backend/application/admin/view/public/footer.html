@@ -1,0 +1,192 @@
+<div id="headCrop" style="display:none">
+    <div class="tailoring-content-one">
+        <label title="选择图片" for="chooseImg" class="layui-btn">
+            <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden" onchange="selectImg(this)"><i class="fa fa-cloud-upload"></i>
+            选择图片
+        </label>
+    </div>
+    <div class="ibox-content">
+        <div class="tailoring-content">
+            <div class="tailoring-content-two">
+                <div class="tailoring-box-parcel" style="text-align: center">
+                    <img id="tailoringImg">
+                    <span class="word" style="position:relative;top:50%;font-size:14px;color: #c2c2c2">仅支持JPG、JPEG、PNG格式的图片文件</span><br>
+                    <!--<span class="size" style="position:relative;top:50%;font-size:16px">文件不能大于2MB</span>-->
+                </div>
+                <div class="preview-box-parcel">
+                    <!--<p>图片预览：</p>-->
+                    <div class="square previewImg"></div>
+                    <div class="circular previewImg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span class="layui-btn cropper-reset-btn" style="float:left">复位</span>
+        <span class="layui-btn zoomIn" style="float:left">放大</span>
+        <span class="layui-btn zoomOut" style="float:left">缩小</span>
+        <span class="layui-btn cropper-rotate-btn" style="float:left">旋转</span>
+        <span class="layui-btn cropper-scaleX-btn" style="float:left">换向</span>
+        <span class="layui-btn " id="sureCut"><i class="fa fa-save"></i> 保存</span>
+        <span class="layui-btn layui-btn-primary" onclick="layer.closeAll()"><i class="fa fa-close"></i> 关闭</span>
+    </div>
+</div>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/layui/layui.js"></script>
+<script src="__JS__/plugins/viewer/viewer.js"></script><!--viewer图片查看器-->
+<script src="__JS__/Icon.js"></script><!--fontAwesome图标库-->
+<script src="__JS__/wk.js"></script><!--封装方法-->
+<script src="__JS__/common.js"></script><!--全局监听ajax-->
+<script src="__JS__/plugins/cropper/cropper.min.js"></script><!--图片裁剪组件-->
+<script src="__JS__/plugins/zTree/jquery.ztree.core-3.5.js"></script><!--zTree组件-->
+<script src="__JS__/plugins/zTree/jquery.ztree.excheck-3.5.js"></script><!--zTree选择组件-->
+<!--<script src="__JS__/plugins/zTree/jquery.ztree.exedit-3.5.js"></script>--><!--zTree编辑组件-->
+<script src="__JS__/plugins/webuploader/webuploader.js"></script><!--webUploader上传组件-->
+<script src="__JS__/plugins/wangEditor-3.1.1/release/wangEditor.js" ></script><!--wangEditor编辑器-->
+<script src="__JS__/plugins/wx-audio/wx-audio.js" ></script><!--音频播放器组件-->
+<script src="__JS__/plugins/clipboard/clipboard.js" ></script><!--粘贴板组件-->
+<script src="__JS__/plugins/jqprint/jQuery.print.js" ></script><!--打印组件-->
+<script src="__JS__/plugins/toastr/toastr.js" ></script><!--toastr通知组件-->
+<script src="__JS__/plugins/ueditor/ueditor.config.js" ></script><!--百度富文本-->
+<script src="__JS__/plugins/ueditor/ueditor.all.js" ></script><!--百度富文本-->
+<!--<script type="text/javascript" src="__NJS__/common.js?v=317"></script>-->
+<script>
+    layui.config({
+        base: '/src/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+        , formSelects: 'formSelects-v4'
+        , dropdown: 'dropdown'
+    }).use(['index','dropdown','formSelects']),function(){
+        var formSelects = layui.formSelects
+    };
+</script>
+<script>
+   toastr.options = {
+        "newestOnTop": false, //新的toastr会显示在旧的toastr前面
+        "preventDuplicates": false, //重复内容的提示框只出现一次
+        "target": "body", // 默认为'body', 设置toastr的目标容器
+        "closeButton": true,//关闭按钮
+        "debug": false,//调试模式
+        "progressBar": true,//进度条
+        "closeOnHover": true,//hover关闭
+        "positionClass": "toast-bottom-right",//toastr显示位置
+        "showDuration": "400",//显示的时间
+        "hideDuration": "100",//消失的时间
+        "timeOut": "7000",//停留的时间
+        "extendedTimeOut": "100",//控制时间
+        "showEasing": "swing",//显示时的动画缓冲方式
+        "hideEasing": "linear",//消失时的动画缓冲方式
+        "showMethod": "layui-anim layui-anim-up",//显示时的动画方式
+        "hideMethod": "layui-anim layui-anim-fadeout",//消失时的动画方式
+    }
+    //view初始化查看图片
+    $(function(){
+        $('.layui-append-img,.layui-circle').viewer({
+            url: 'data-original',
+        });
+    })
+
+    //关闭自动填充
+    $('input').attr('autocomplete',"off");
+
+    // //图片灯箱
+    // function imgDisplay(obj) {
+    //     var src = $(obj).attr("src");
+    //     var imgHtml = '<div class="showP"><img src=' + src + ' style="margin-top: 120px;height:50%;margin-bottom:120px;"  /><p class="closeP"  onclick="closePicture(this)"><span class="cha">×</span></p></div>'
+    //     $('body').append(imgHtml);
+    // }
+    //
+    // //关闭图片灯箱
+    // function closePicture(obj) {
+    //     $(obj).parent("div").remove();
+    // }
+
+    //tips框
+    $('#offAll').on('mouseover', function(){
+        var that = this;
+        layer.tips('<span style="color:#686B6D;"><i class="fa fa-info-circle"></i> 若未勾选默认禁用全部</span>', that,{tips: [2, '#F2F2F2'],time: 10000});
+    });
+    //tips框
+    $('#onAll').on('mouseover', function(){
+        var that = this;
+        layer.tips('<span style="color:#686B6D;"><i class="fa fa-info-circle"></i> 若未勾选默认启用全部</span>', that,{tips: [2, '#F2F2F2',''],time: 10000});
+    });
+    //tips框
+    $('#excel').on('mouseover', function(){
+        var that = this;
+        layer.tips('<span style="color:#686B6D;"><i class="fa fa-info-circle"></i> 导出筛选完成数据</span>', that,{tips: [2, '#F2F2F2',''],time: 10000});
+    });
+    //关闭tips框
+    $('#offAll,#onAll,#export,#excel').on('mouseout', function(){
+        layer.closeAll('tips');
+    });
+
+    //layui公共操作
+    layui.use(['form','table'], function() {
+        var form = layui.form
+            ,table = layui.table
+        //重置搜索框
+        $('#empty').on('click', function () {
+            $('.layui-input').val('');
+            // $(".search").trigger("chosen:updated");
+            $('select').each(function (i, j) {
+                $(j).find("option:selected").attr("selected", false);
+                form.render('select')
+            })
+        });
+        //表格排序
+        table.on('sort(LAY-table-manage)', function(obj){
+            table.reload('LAY-table', {
+                initSort: obj //记录初始排序，如果不设的话，将无法标记表头的排序状态
+                ,where: { //请求参数
+                    field: obj.field //排序字段
+                    ,order: obj.type //排序方式
+                }
+            });
+        });
+        //监听搜索
+        form.on('submit(LAY-search)', function (data) {
+            //执行重载
+            table.reload('LAY-table', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                ,where: data.field
+            });
+        });
+        //地区三级联动
+        form.on('select(province)', function(data){
+            getArea("province",data.value);
+        });
+        form.on('select(city)', function(data){
+            getArea("city",data.value);
+        });
+        function getArea(type,id){
+            $.ajax({
+                url:"{:url('admin/Base/place')}",
+                dataType:"json",
+                data:'id='+id,
+                type:'post',
+                success:function(res){
+                    var opt = null;
+                    $.each(res.msg,function(key,vo){
+                        opt = opt+"<option value="+vo.district_id+">"+vo.district+"</option>";
+                    })
+                    if(type=="province"){
+                        $("#city").empty();
+                        $("#city").append('<option value="">---- 请选择市 ----</option>');
+                        $("#district").empty();
+                        $("#district").append('<option value="">---- 请选择区 ----</option>');
+                        $("#city").append(opt);
+                    }else if(type == "city"){
+                        $("#district").empty();
+                        $("#district").append('<option value="">---- 请选择区 ----</option>');
+                        $("#district").append(opt);
+                    }
+                    form.render('select');
+                }
+            })
+        }
+    });
+</script>

@@ -1,0 +1,176 @@
+{include file="public/header" /}
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto" id="LAY-user">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="start" class="layui-input" onfocus="wk.lay_date(this);" placeholder="上次登录开始日期" >
+                    </div>
+                        <div class="layui-form-mid">
+                        -
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="end" class="layui-input" onfocus="wk.lay_date(this);" placeholder="上次登录结束日期" >
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <select name="role" id="role" class="layui-input" lay-search="">
+                            <option  value="">不限角色</option>
+                            {foreach name="role" item="vo"}
+                            <option  value="{$vo.id}">{$vo.title}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" id="key" class="layui-input" name="key" placeholder="用户名/真实姓名"/>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                    <button class="layui-btn" lay-submit="" lay-filter="LAY-search">立即搜索</button>
+                    <button  class="layui-btn layui-btn-normal" id="empty"  lay-submit="" lay-filter="LAY-search">重置</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="layui-btn icon-btn" data-type="add" onclick="wk.layer_show('添加管理员','{:url('userAdd')}')">
+                    <i class="fa fa-plus"></i> 添加管理员
+                </button>
+                <span class="layui-btn-dropdown" style="display:inline-block;">
+                    <button class="layui-btn layui-btn-danger" data-toggle="dropdown"><i class="fa fa-wrench"></i> 批量操作 <i class="fa fa-caret-down"></i></button>
+                    <ul class="layui-dropdown-menu layui-anim layui-anim-upbit">
+                        <li><a href="javascript:;" class="layuiBtn" data-type="getCheckData"><i class="fa fa-trash-o"></i> 批量删除 </a></li>
+                        <li><a  href="javascript:;" class="layuiBtn" data-type="usingAll" id="onAll"><i class="fa fa-check-circle"></i> 批量启用</a></li>
+                        <li><a  href="javascript:;" class="layuiBtn" data-type="forbiddenAll" id="offAll"><i class="fa fa-ban"></i> 批量禁用</a></li>
+                        <li class="divider"></li><!--分割线-->
+                        <li><a  href="javascript:;" class="layuiBtn" data-type="excelAll" id="excel"><i class="fa fa-download"></i> 导出Excel</a></li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="LAY-table-manage" lay-filter="LAY-table-manage"></table>
+            <!--图片模板-->
+            <script type="text/html" id="imgTpl">
+                <img src="{{d.portrait}}" class="layui-table-img layui-circle" onerror="this.src='/static/admin/images/head_default.gif'"  />
+            </script>
+            <!--操作模板-->
+            <script type="text/html" id="opeBar">
+                {{# if(d.id!==1){ }}
+                    <a class="layui-btn layui-btn-xs" title="编辑" onclick="wk.layer_show('编辑管理员','{:url('userEdit')}?id={{d.id}}')"><i class="fa fa-pencil"></i></a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" title="删除" onclick="wk.confirm('{{d.id}}','{:url('userDel')}')"><i class="fa fa-trash-o"></i></a>
+                {{# }else{ }}
+                    <a class="layui-btn layui-btn-xs" title="编辑" onclick="wk.layer_show('编辑管理员','{:url('userEdit')}?id={{d.id}}')"><i class="fa fa-pencil"></i></a>
+                {{# } }}
+            </script>
+            <!--状态模板-->
+            <script type="text/html" id="staBar">
+                {{# if(d.id!==1){ }}
+                    <input type="checkbox" value="{{d.id}}"  lay-skin="switch"  lay-text="ON|OFF" lay-filter="OnOff"{{ d.status == 1 ? 'checked' : '' }}  >
+                {{# } }}
+            </script>
+            <!--角色模板-->
+            <script type="text/html" id="titleTpl">
+                {{# if(d.title == null){ }}
+                    <span style="color:#ec4758">重新分配角色</span>
+                {{# }else{ }}
+                    {{d.title}}
+                {{# } }}
+            </script>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['index', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table;
+        table.render({
+            elem: '#LAY-table-manage'
+            , url: '{:url("User/index")}'
+            ,response: {
+                statusCode: 220 //成功的状态码，默认：0
+            }
+            , page: true
+            , even: false //开启隔行背景
+            , size: 'lg' //sm小尺寸的表格 lg大尺寸
+            // ,width:100
+            , autoSort: false
+            , cellMinWidth: 150
+            , height: "full-220"
+            , limits: [10, 20, 30, 40, 50]
+            , limit: "{:config('pages')}"
+            , loading: true
+            , id: 'LAY-table'
+            , cols: [[
+                {type: 'checkbox', fixed: 'left'}
+                , {type:'numbers', width: 80, title: '序号'}
+                , {field: 'username', width: '', title: '管理员名称', align: 'center'}
+                , {field: 'portrait', width: 90, title: '头像', align: 'center', templet: '#imgTpl'}
+                , {field: 'title', width: '', title: '管理员角色', align: 'center', templet: "<div>{{!d.title?'重新分配角色':d.title}}</div>"}
+                , {field: 'loginnum', width: '', title: '登录次数', sort: true, align: 'center'}
+                , {field: 'last_login_ip', width: '', title: '上次登录IP', align: 'center'}
+                , {field: 'last_login_time', width: 200, title: '上次登录时间', sort: true, align: 'center',templet:"<div>{{d.last_login_time?layui.util.toDateString(d.last_login_time*1000,'yyyy-MM-dd HH:MM'):''}}</div>"}
+                , {field: 'phone', width: '', title: '联系方式', align: 'center'}
+                , {field: 'real_name', width: '', title: '真实姓名', align: 'center'}
+                , {field: 'status', fixed: 'right', width: 90, title: '状态', align: 'center', templet: '#staBar'}
+                , {fixed: 'right', width: 90, title: '操作', align: 'center', toolbar: '#opeBar'}
+            ]]
+            ,done: function (res, curr, count) {
+                $('.layui-circle').viewer({
+                    url: 'data-original',
+                });
+            }
+        });
+        //监听状态开关操作
+        form.on('switch(OnOff)', function (obj) {
+            // $(obj.othis).parents('tr').find('[data-field="phone"]').find('.layui-table-cell').text(222222);
+            var num = '';
+            obj.elem.checked == true? num = 1: num = 2;
+            //用户状态
+            wk.status(this.value,num, '{:url("user_state")}',obj);
+        });
+        //事件
+        var active = {
+            getCheckData: function(){
+                //批量删除
+                wk.batchDel(getIds(),"{:url('batchDelUser')}");
+            }
+            ,forbiddenAll: function(){
+                //批量禁用
+                wk.batchForbidden(getIds(),2,"{:url('forbiddenAdmin')}");
+            }
+            ,usingAll: function(){
+                //批量启用
+                wk.usingAll(getIds(),1,"{:url('usingAdmin')}");
+            }
+            ,excelAll: function(){
+                //导出Excel
+                wk.excelAll(getIds(),$(".layui-input").serialize(),"{:url('excelAdmin')}");
+            }
+        };
+
+        $('.layuiBtn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        var getIds = function () {
+            var ids = [];
+            var checkStatus = table.checkStatus('LAY-table')
+                ,data = checkStatus.data;
+            $.each(data,function(index,item){
+                ids.push(item['id'])
+            });
+            return ids;
+        }
+    });
+</script>
+</body>
+</html>

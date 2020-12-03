@@ -1,0 +1,263 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"/www/wwwroot/test1.sxjiangyan.com/public/../application/admin/view/teacher/add_teacher.html";i:1606658626;}*/ ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>基础表单</title>
+    <link rel="stylesheet" href="/static/assets/libs/layui/css/layui.css" />
+    <link rel="stylesheet" href="/static/assets/module/admin.css?v=317" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        #formBasForm {
+           max-width: 800px;
+            margin: 30px 200px 50px;
+        }
+
+        .layui-form-item {
+            display: flex !important;
+        }
+
+        .layui-form-label {
+            flex: 3;
+        }
+
+        .layui-input-block {
+            flex: 14;
+        }
+
+        .layui-input-block {
+            margin-left: 20px !important;
+            min-height: 36px;
+        }
+        .layui-upload-img {
+            width: 200px;
+            min-height: 120px;
+            height: auto;
+            margin: 0 10px 10px 0;
+        }
+        #formBasForm .layui-form-item {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 加载动画 -->
+    <div class="page-loading">
+        <div class="ball-loader">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <!-- 正文开始 -->
+    <div class="layui-fluid">
+        <div class="layui-card">
+            <div class="layui-card-header">添加讲师 </div>
+            <div class="layui-card-body">
+                <!-- 表单开始 -->
+                <form class="layui-form" id="formBasForm" lay-filter="formBasForm">
+                    <input type="hidden" name="id" value="<?php echo !empty($item['id'])?$item['id']:''; ?>">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-required">老师姓名:</label>
+                        <div class="layui-input-block">
+                            <input name="imgname" class="layui-input" required lay-verify="required" value="<?php echo !empty($item['imgname'])?$item['imgname']:''; ?>" />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-required">照片:</label>
+                        <input type="hidden" name="img" lay-verify="required" required value="<?php echo !empty($item['img'])?$item['img']:''; ?>">
+                        <div class="layui-upload layui-input-block">
+                            <button type="button" class="layui-btn" id="test1"><i class="layui-icon">&#xe67c;</i>上传照片</button>
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" src="<?php echo !empty($item['img'])?$item['img']:''; ?>" id="demo1">
+                                <p id="demoText"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-required">手机号(登录账号):</label>
+                        <div class="layui-input-block">
+                            <input name="tphone" class="layui-input" required lay-verify="required" value="<?php echo !empty($item['tphone'])?$item['tphone']:''; ?>" />
+                        </div>
+                    </div>
+<!--                    <div class="layui-form-item">-->
+<!--                        <label class="layui-form-label layui-form-required">密码(默认手机号后六位):</label>-->
+<!--                        <div class="layui-input-block">-->
+<!--                            <input name="tpassword" type="password" class="layui-input" required lay-verify="required" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-required">简介:</label>
+                        <div class="layui-input-block">
+                            <textarea name="introduce" id="LAY_editor2" ><?php echo !empty($item['introduce'])?$item['introduce']:''; ?></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block" style="display: flex;justify-content: space-around;">
+                            <button class="layui-btn" lay-filter="formBasSubmit" lay-submit>&emsp;提交&emsp;</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">&emsp;重置&emsp;</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- //表单结束 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- js部分 -->
+    <script type="text/javascript" src="/static/assets/libs/layui/layui.js"></script>
+    <script type="text/javascript" src="/static/assets/js/common.js?v=317"></script>
+    <script src="/static/admin/js/plugins/ueditor/ueditor.config.js" ></script><!--百度富文本-->
+    <script src="/static/admin/js/plugins/ueditor/ueditor.all.js" ></script><!--百度富文本-->
+    <script>
+        //百度富文本编辑器
+        var editor = UE.getEditor('LAY_editor2', {
+            initialFrameWidth:750,
+            initialFrameHeight:450,
+            autoHeight: false,
+            autoHeightEnabled:false,
+            autoFloatEnabled:false
+        });
+        //自定义上传接口
+        UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;
+        UE.Editor.prototype.getActionUrl = function(action) {
+            if (action == 'uploadimage' || action == 'uploadscrawl') {
+                return '/index.php/admin/upload/ueditorUpload';//这就是自定义的上传地址
+            } else {
+                return this._bkGetActionUrl.call(this, action);
+            }
+        }
+        layui.use(['layer', 'form', 'laydate','upload','admin'], function () {
+            var $ = layui.jquery;
+            var layer = layui.layer;
+            var form = layui.form;
+            var laydate = layui.laydate;
+            var upload = layui.upload;
+            var admin = layui.admin;
+            //普通图片上传
+            var uploadInst = upload.render({
+                elem: '#test1'
+                ,url: "<?php echo url('admin/Upload/uploadLocal'); ?>" //改成您自己的上传接口
+                ,before: function(obj){
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result){
+                        $('#demo1').attr('src', result); //图片链接（base64）
+                    });
+                }
+                ,done: function(res){
+                    console.log(res)
+                    //如果上传失败
+                    if(res.code == 0){
+                        $("input[name='img']").val(res.data);
+                    }
+                    //上传成功
+                }
+                ,error: function(){
+                    //演示失败状态，并实现重传
+                    var demoText = $('#demoText');
+                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                    demoText.find('.demo-reload').on('click', function(){
+                        uploadInst.upload();
+                    });
+                }
+            });
+            /* 渲染laydate */
+            laydate.render({
+                elem: '#formBasDateSel',
+                trigger: 'click',
+                range: true
+            });
+            /* 监听表单提交 */
+            form.on('submit(formBasSubmit)', function (data) {
+                $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+                $.ajax({
+                    url:"<?php echo url('add_teacher'); ?>",
+                    type:'post',
+                    dataType:'json',
+                    data:data.field,
+                    success:function(res){
+                        //console.log(res)
+                        if (res.code == 0) {
+                            layer.msg(res.msg,{icon:1,time:1500,shade:0.1})
+                            setTimeout(function () {
+                                admin.closeThisTabs();
+                            }, 1000);
+                        } else {
+                            $(".layui-btn").removeClass('layui-disabled').removeAttr('disabled');
+                            wk.error(res.msg);
+                            return false;
+                        }
+                    }
+                })
+            });
+
+
+
+            // 获取内容
+            $('#btnDemoEdtGetContent').click(function () {
+                var content = tinymce.get('demoEditor').getContent();
+                layer.alert(content, { skin: 'layui-layer-admin', shade: .1 });
+            });
+
+            // 获取文本
+            $('#btnDemoEdtGetText').click(function () {
+                var content = tinymce.get('demoEditor').getContent({ format: 'text' });
+                layer.alert(content, { skin: 'layui-layer-admin', shade: .1 });
+            });
+
+            // 修改文本
+            $('#btnDemoEdtSetContent').click(function () {
+                var content = [
+                    '<div style="text-align: center;color: #fff;background-image: linear-gradient(to right,#009688,#5fb878);padding: 20px;">',
+                    '   <div style="font-size: 28px;margin-bottom: 10px;">EASY WEB 后台管理模板</div>',
+                    '   <div style="font-size: 18px">基于Layui的一套通用型后台管理模板，拥有众多原创组件及模板页面</div>',
+                    '</div><br/>'
+                ].join('');
+                tinymce.get('demoEditor').setContent(content);
+            });
+
+            // 插入文本
+            $('#btnDemoEdtInsertContent').click(function () {
+                tinymce.get('demoEditor').insertContent('👍赞~', {});
+            });
+
+            // 弹窗中使用
+            $('#btnDemoEdtShowLayer').click(function () {
+                admin.open({
+                    title: '富文本编辑器',
+                    type: 1,
+                    area: '820px',
+                    offset: '45px',
+                    content: '<textarea id="demoEditor2"></textarea>',
+                    success: function () {
+                        tinymce.init({
+                            selector: '#demoEditor2',
+                            height: 480,
+                            branding: false,
+                            language: 'zh_CN',
+                            plugins: 'code print preview fullscreen paste searchreplace save autosave link autolink image imagetools media table codesample lists advlist hr charmap emoticons anchor directionality pagebreak quickbars nonbreaking visualblocks visualchars wordcount',
+                            toolbar: 'fullscreen preview code | undo redo | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | formatselect fontselect fontsizeselect | link image media emoticons charmap anchor pagebreak codesample | ltr rtl',
+                            toolbar_drawer: 'sliding',
+                            images_upload_url: '../../../json/tinymce-upload-ok.json',
+                            file_picker_types: 'media',
+                            file_picker_callback: function (callback, value, meta) {
+                                layer.msg('演示环境不允许上传', { anim: 6 });
+                            }
+                        });
+                    },
+                    end: function () {
+                        tinymce.get('demoEditor2').destroy(false);
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

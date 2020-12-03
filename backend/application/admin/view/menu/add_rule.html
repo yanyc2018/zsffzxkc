@@ -1,0 +1,118 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="layui-fluid layui-col-md12">
+    <div class="layui-card">
+        <div class="layui-card-body layui-form">
+            <div class="layui-row layui-col-space10 layui-form-item ">
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">所属父级</label>
+                    <div class="layui-input-block">
+                        <select name="pid" xm-select="select1" lay-verify="required" xm-select-search="" xm-select-search-type="dl">
+                            <option value="0" >顶级菜单</option>
+                            {foreach name="admin_rule" item="v"}
+                                <option value="{$v.id}" {eq name="id" value="$v.id"}selected="selected"{/eq} >{$v.placeholder}{$v.title}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md9">
+                    <label class="layui-form-label">图标</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="css" lay-verify="css" id="iconPicker" lay-filter="iconPicker" class="layui-input" style="display:none">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">菜单名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" id="menu" lay-verify="required" placeholder="菜单名称（多个名称英文逗号连接）" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">节点</label>
+                    <div class="layui-input-block">
+                        <textarea name="name" lay-verify="required" placeholder="模块/控制器/方法 (一级节点添加“#” 二级节点添加“##”，多个节点英文逗号连接)" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">排序</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="sort" lay-verify="required|sort" placeholder="输入排序值（多个排序值英文逗号连接）" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="status" value="1" title="启用" checked>
+                        <input type="radio" name="status" value="2" title="禁用" >
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">保存
+                        </button>
+                        <button class="layui-btn layui-btn-primary" onclick="wk.layer_close('close')">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择图标-->
+<div id="chooseicon" style="display:none">
+    <div>
+        <ul class="list-inline"><li data-font="#" onclick="choseThis(this)">#</li></ul>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.config({
+        base: '/src/' //静态资源所在路径
+    }).extend({
+        iconPicker: 'modules/iconPicker'
+    }).use(['form','iconPicker'], function() {
+        var form = layui.form,
+            iconPicker = layui.iconPicker
+        iconPicker.render({
+            elem: '#iconPicker',// 选择器，推荐使用input
+            type: 'fontClass',// 数据类型：fontClass/unicode，推荐使用fontClass
+            search: true,// 是否开启搜索：true/false
+            page: false,// 是否开启分页
+            limit: 30,// 每页显示数量，默认16。 注: page为true生效
+            select:true,// 是否开启多选 true/false
+            click: function (data) { // 点击回调
+                // console.log(data);
+            }
+        });
+        form.verify({
+            sort:function(value,item){
+                var arr = value.split(",");
+                var checkResult = '';
+                $.each(arr,function(k,v){
+                    if(!/^(0|[1-9]\d*)$/.test(v)){
+                        checkResult = '排序值只能为非负整数';
+                    }
+                })
+                return checkResult;
+            },
+            css:[/\S/,'选择图标']
+        });
+        form.on('submit(component-form-element)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            $.ajax({
+                url:"{:url('add_rule')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        wk.success(res.msg,'wk.layer_close()');
+                    } else {
+                        wk.error(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    }
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{include file="public/header" /}
+<link rel="stylesheet" type="text/css" href="__JS__/webupload/webuploader.css">
+<link rel="stylesheet" type="text/css" href="__JS__/webupload/style.css">
+<body class="gray-bg">
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header layuiadmin-card-header-auto">
+            <p>您可以尝试文件拖拽，使用QQ截屏工具，然后激活窗口后粘贴，或者点击添加图片按钮，来体验此demo.</p>
+        </div>
+        <div class="layui-card-body">
+            <div class="page-container">
+                <input type="hidden" name="del" id="del" value="">
+                <input type="hidden" id="hid" value="{$photo}">
+                <input type="hidden" name="photo" id="photo" value="{$photo}">
+                <div id="uploader" class="container">
+                    <div class="queueList">
+                        <div class="placeholder">
+                            <div id="filePicker"></div>
+                            <p>或将照片拖到这里，单次最多可选300张</p>
+                        </div>
+                    </div>
+                    <div class="statusBar" style="display:none;">
+                        <div class="layui-progress layui-progress-big active" lay-showpercent="true">
+                            <div class="layui-progress-bar layui-bg-blue" lay-percent="0%">
+                            </div>
+                        </div>
+                        <div class="info"></div>
+                        <div class="btns">
+                            <div id="goPicker" class="filePicker2"></div>
+                            <div class="uploadBtn">开始上传</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script type="text/javascript">
+    var n = wk.uploads({num:8,type:'png,jpg,gif',status:'update'});
+    function imgDel(e,obj,hid,del){
+        wk.update_del(e,obj,hid,del,n);
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="layui-fluid layui-col-md12">
+    <div class="layui-card">
+        <div class="layui-card-body layui-form">
+            <div class="layui-row layui-col-space10 layui-form-item ">
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">配置标识</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" lay-verify="required|name" placeholder="用于config函数调用，只能使用英文且不能重复" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">配置标题</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="required" placeholder="用于后台显示的配置标题" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">配置类型</label>
+                    <div class="layui-input-block">
+                        <select name="type"  id="type" lay-verify="required" lay-search="" lay-filter="types" >
+                            <option value="">请选择类型</option>
+                            {if !empty($Think.config.config_type_list)}
+                                {volist name="Think.config.config_type_list" id="type"}
+                                    <option value="{$key}">{$type}</option>
+                                {/volist}
+                            {/if}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">配置分组</label>
+                    <div class="layui-input-block">
+                        <select name="group" lay-verify="required" lay-search="">
+                            <option value="">请选择分组</option>
+                            {if !empty($Think.config.config_group_list)}
+                                {volist name="Think.config.config_group_list" id="type"}
+                                    <option value="{$key}">{$type}</option>
+                                {/volist}
+                            {/if}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">配置值</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="value" lay-verify="required" placeholder="用于config函数调用显示的值" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">配置项</label>
+                    <div class="layui-input-block">
+                        <textarea name="extra" placeholder="如果是枚举型,需要配置该项" lay-verify="extra" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">配置描述</label>
+                    <div class="layui-input-block">
+                        <textarea name="remark" lay-verify="required" placeholder="配置详细说明" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">排序</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="sort" lay-verify="required|sort" placeholder="用于显示的顺序" class="layui-input " value="50">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="status" value="1" title="启用" checked>
+                        <input type="radio" name="status" value="2" title="禁用" >
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">保存
+                        </button>
+                        <button class="layui-btn layui-btn-primary" onclick="wk.layer_close('close')">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['form'], function() {
+        var form = layui.form;
+        form.verify({
+            name:function(value,item){
+                if(!/^[a-zA-Z_]*$/.test(value)){
+                    return '只能使用英文和下划线且不能重复';
+                }
+                var checkResult = "";
+                $.ajax({
+                    url:"{:url('Config/checkConfig')}",
+                    type:'post',
+                    data:"name="+value,
+                    async: false,//必须同步
+                    success:function(res){
+                        if(res.code == 100){
+                            checkResult = "该配置标识已存在";
+                        }
+                    }
+                })
+                return checkResult;
+            },
+            extra: function(value,item){
+                var type = $('#type').find("option:selected").text();
+                if(type == "枚举" && value == ""){
+                    return "配置类型为枚举，配置项必填";
+                }
+            },
+            sort:[/^(0|[1-9]\d*)$/,'排序值只能为非负整数']
+        });
+        form.on('submit(component-form-element)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            $.ajax({
+                url:"{:url('add_config')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        wk.success(res.msg,'wk.layer_close()');
+                    } else {
+                        wk.error(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    }
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

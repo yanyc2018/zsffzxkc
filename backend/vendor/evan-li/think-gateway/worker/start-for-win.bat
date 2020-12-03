@@ -1,0 +1,1 @@
+php ./starter/start_register.php ./starter/start_gateway.php ./starter/start_business.php

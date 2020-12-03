@@ -1,0 +1,222 @@
+{include file="public/header" /}
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <form onsubmit="return false;">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" id="key" class="layui-input" name="key" placeholder="输入关键字"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <button class="layui-btn" id="btn-search">立即搜索</button>
+                            <button type="reset" class="layui-btn layui-btn-normal" >重置</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <button class="layui-btn" data-type="add" onclick="wk.layer_show('添加菜单','{:url('add_rule')}')">
+                    <i class="fa fa-plus"></i> 添加菜单
+                </button>
+                <button class="layui-btn layui-btn-danger layuiBtn" data-type="getCheckData" >
+                    <i class="fa fa-trash-o"></i> 批量删除
+                </button>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="LAY-table-manage" lay-filter="LAY-table-manage"></table>
+            <!--类型模板-->
+            <script type="text/html" id="typeTpl">
+                {{# if(d.type == 1){ }}
+                    菜单
+                {{# }else{ }}
+                    按钮
+                {{# } }}
+            </script>
+            <!--状态模板-->
+            <script type="text/html" id="staBar">
+                <input type="checkbox" value="{{d.id}}"  lay-skin="switch"  lay-text="ON|OFF" lay-filter="OnOff"{{ d.status == 1 ? 'checked' : '' }}  >
+            </script>
+            <!--操作模板-->
+            <script type="text/html" id="opeBar">
+                <a class="layui-btn layui-btn-info layui-btn-xs" title="添加子菜单" onclick="wk.layer_show('添加菜单','{:url('add_rule')}?id={{d.id}}')"><i class="fa fa-sitemap"></i></a>
+                <a class="layui-btn layui-btn-xs" title="编辑" onclick="wk.layer_show('编辑菜单','{:url('edit_rule')}?id={{d.id}}')"><i class="fa fa-pencil"></i></a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" id="del_{{d.id}}" title="删除" onclick="del_menu(this,{{d.id}})"><i class="fa fa-trash-o"></i></a>
+            </script>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['index', 'table','util'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+            , util = layui.util
+        //固定块
+        util.fixbar({
+            css: {right: 20, bottom: 50}
+            ,bgcolor: '#393D49'
+        });
+        table.render({
+            elem: '#LAY-table-manage'
+            , url: '{:url("Menu/index")}'
+            ,response: {
+                statusCode: 220 //成功的状态码，默认：0
+            }
+            , page: false
+            , even: false //开启隔行背景
+            , size: 'lg' //sm小尺寸的表格 lg大尺寸
+            // ,width:100
+            , autoSort: false
+            , cellMinWidth: 150
+            // , height: "full-220"
+            , limits: []
+            , limit: 1000
+            , loading: true
+            , id: 'LAY-table'
+            , cols: [[
+                {type: 'checkbox', fixed: 'left',}
+                , {type:'numbers', width: 80, title: '序号'}
+                , {field: 'title', width: '' ,title: '权限名称', align: 'left',edit: 'text',templet:'<div>{{d.placeholder}}{{d.title}}</div>'}
+                , {field: 'css', width: 80, title: '图标', align: 'center',templet:'<div><i class="{{d.css}}"></i></div>'}
+                , {field: 'name', width: '', title: '节点', align: 'center',edit: 'text'}
+                , {field: 'create_time', width: '', title: '添加时间', align: 'center'}
+                , {field: 'sort',fixed: 'right', width: 90, title: '排序', align: 'center',edit: 'text'}
+                // , {field: 'type',fixed: 'right', width: 100, title: '类型', align: 'center', templet: '#typeTpl'}
+                , {field: 'status',fixed: 'right', width: 100, title: '状态', align: 'center', templet: '#staBar'}
+                , {fixed: 'right', width: 140, title: '操作', align: 'center', toolbar: '#opeBar'}
+            ]]
+            ,done: function (res, curr, count) {
+                $('th').children().prop('align','center');
+            }
+        });
+        //监听状态开关操作
+        form.on('switch(OnOff)', function (obj) {
+            var num = '';
+            obj.elem.checked == true? num = 1: num = 2;
+            //菜单状态
+            wk.status(this.value,num, '{:url("rule_state")}',obj);
+        });
+
+        //监听单元格编辑
+        table.on('edit(LAY-table-manage)', function(obj){
+            var value = obj.value //得到修改后的值
+                ,data = obj.data //得到所在行所有键值
+                ,field = obj.field; //得到字段
+            // layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+            if(field == 'sort'){
+                if(!/^(0|[1-9]\d*)$/.test(value)){
+                    layer.msg('排序值只能为非负整数',{icon:2,time:1500,shade: 0.1},function(){
+                        //重载当前页表格
+                        $(".layui-laypage-btn").click();
+                    });
+                    return false;
+                }
+            }
+            wk.change(data.id,"{:url('editField')}",field,value,'auth_rule');
+        });
+
+        //事件
+        var active = {
+            getCheckData: function(){
+                //批量删除
+                layer.confirm('选中菜单的子分类将同时删除,确认删除吗?', {icon: 7, title:'警告'}, function(index){
+                    $.ajax({
+                        url: "{:url('batchDelMenu')}",
+                        type: "post",
+                        dataType: "json",
+                        data: 'ids='+getIds(),
+                        success: function (res) {
+                            if (res.code == 200) {
+                                // layer.msg(res.msg, {icon: 1, time: 1500, shade: 0.1},function(index){
+                                //     layer.close(index);
+                                //     if (res.data != "") {
+                                //         var num = res.data.split(',');
+                                //         $.each(num, function (index, item) {
+                                //             $('#del_' + item).parents("tr").remove();
+                                //         })
+                                //     }
+                                //     layui.table.reload('LAY-table');
+                                // });
+                                wk.success(res.msg,"layui.table.reload('LAY-table');")
+                            } else if (res.code == 100) {
+                                wk.error(res.msg,"layui.table.reload('LAY-table');");
+                            }
+                        }
+                    });
+                    layer.close(index);
+                })
+            }
+        };
+
+        $('.layuiBtn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        var getIds = function () {
+            var ids = [];
+            var checkStatus = table.checkStatus('LAY-table')
+                ,data = checkStatus.data;
+            $.each(data,function(index,item){
+                ids.push(item['id'])
+            });
+            return ids;
+        }
+    });
+
+    /**
+     * [del_menu 删除菜单]
+     */
+    function del_menu(obj,id){
+        // wk.confirm(id,'{:url("del_rule")}');
+        layer.confirm('此菜单的子分类将同时删除,确认删除吗?', {icon: 7, title:'警告'}, function(index){
+            //do something
+            $.getJSON('{:url("del_menu")}', {'id' : id}, function(res){
+                if(res.code == 200){
+                    // layer.msg(res.msg,{icon:1,time:1500,shade: 0.1},function(index){
+                    //     layer.close(index);
+                    //     var num = res.data.split(',');
+                    //     $.each(num, function (index, item) {
+                    //         $('#del_' + item).parents("tr").remove();
+                    //     })
+                    //     layui.table.reload('LAY-table');
+                    // });
+                    wk.success(res.msg,"layui.table.reload('LAY-table');")
+                }else if(res.code == 100){
+                    wk.error(res.msg,"layui.table.reload('LAY-table');");
+                }
+            });
+            layer.close(index);
+        })
+    }
+    // 模糊搜索表格
+    $('#btn-search').click(function () {
+        var keyword = $('#key').val();
+        var searchCount = 0;
+        $('#LAY-table-manage').next('.layui-table-view').find('.layui-table-body tbody tr td').each(function () {
+            $(this).css('background-color', 'transparent');
+            var text = $(this).text();
+            if (keyword != '' && text.indexOf(keyword) >= 0) {
+                $(this).css('background-color', 'rgba(250,230,160,0.5)');
+                if (searchCount == 0) {
+                    $('html,body').stop(true);
+                    $('html,body').animate({scrollTop: $(this).offset().top - 150}, 500);
+                }
+                searchCount++;
+            }
+        });
+        if (keyword == '') {
+            wk.error("请输入搜索内容");
+        } else if (searchCount == 0) {
+            wk.error("没有匹配结果");
+        }
+    });
+</script>
+</body>
+</html>

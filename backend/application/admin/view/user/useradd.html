@@ -1,0 +1,140 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="layui-fluid layui-col-md12">
+    <div class="layui-card">
+        <div class="layui-card-body layui-form">
+            <div class="layui-row layui-col-space10 layui-form-item ">
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="username" lay-verify="required|username" placeholder="管理员名称" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">角色</label>
+                    <div class="layui-input-block">
+                        <select name="groupid" lay-verify="required" lay-search="">
+                            <option value="">请选择角色</option>
+                            {if !empty($role)}
+                                {foreach name="role" item="vo"}
+                                    <option value="{$vo.id}">{$vo.title}</option>
+                                {/foreach}
+                            {/if}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">头像</label>
+                    <div class="layui-input-block">
+                        <input type="hidden" id="data_photo" name="portrait" lay-verify="headCrop">
+                        <div id="fileList" class="uploader-list" style="float:right"></div>
+                        <div  style="float:left" class="layui-btn" onclick="wk.layer_show1('上传头像',$('#headCrop'),700);">选择头像</div>
+                        <img id="img_data" class="layui-circle layui-head-img"  src="/static/admin/images/head_default.gif" />
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="password" lay-verify="required|pass" placeholder="管理员登录密码" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">真实姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="real_name" lay-verify="required|realname" placeholder="管理员真实姓名" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">联系方式</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="phone" lay-verify="required|phone" placeholder="管理员联系方式" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="status" value="1" title="启用" checked>
+                        <input type="radio" name="status" value="2" title="禁用" >
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">保存
+                        </button>
+                        <button class="layui-btn layui-btn-primary" onclick="wk.layer_close('close')">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file="public/footer" /}
+<script type="text/javascript" src="__JS__/plugins/cropper/Crop.js"></script>
+<script>
+    //裁剪后的处理
+    $("#sureCut").on("click",function () {
+        if ($("#tailoringImg").attr("src") == null ){
+            layer.msg('请先选择头像',{anim:6})
+        }else{
+            var cas = $('#tailoringImg').cropper('getCroppedCanvas');//获取被裁剪后的canvas
+            var base64url = cas.toDataURL('image/png'); //转换为base64地址形式
+            $("#img_data").attr('src',base64url).show();
+            $('#data_photo').val(base64url);
+            //关闭裁剪框
+            layer.closeAll();
+        }
+    });
+</script>
+<script>
+    layui.use(['form'], function() {
+        var form = layui.form;
+        form.verify({
+            username:function(value,item){
+                if(!/^[\S]{2,10}$/.test(value)){
+                    return '名称必须2到10字符，且不能出现空格';
+                }
+                var checkResult = "";
+                $.ajax({
+                    url:"{:url('User/checkName')}",
+                    type:'post',
+                    data:"username="+value,
+                    async: false,//必须同步
+                    success:function(res){
+                        if(res.code == 100){
+                            checkResult = "该名称已存在";
+                        }
+                    }
+                })
+                return checkResult;
+            },
+            pass: [/^[\S]{6,16}$/,'密码必须6到16位，且不能出现空格'],
+            // headCrop:[/^[\S]$/,'头像不能为空'],
+            // headCrop:function(value,item){
+            //     if(value == ""){
+            //         return '头像不能为空';
+            //     }
+            // },
+            realname:[/^[\S]{2,10}$/,'真实姓名必须2到10字符，且不能出现空格']
+
+        });
+        form.on('submit(component-form-element)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            $.ajax({
+                url:"{:url('userAdd')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        wk.success(res.msg,'wk.layer_close()');
+                    } else {
+                        wk.error(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    }
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+{include file="public/header" /}
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <button class="layui-btn layuiBtn"  data-type="backups" id="export">
+                <i class="fa fa-refresh"></i> 立即备份
+            </button>
+            <button class="layui-btn layui-btn-info layuiBtn" data-type="optimize">
+                <i class="fa fa-line-chart"></i> 优化表
+            </button>
+            <button class="layui-btn layui-btn-normal layuiBtn" data-type="repair" >
+                <i class="fa fa-wrench"></i> 修复表
+            </button>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="LAY-table-manage" lay-filter="LAY-table-manage"></table>
+            <!--操作模板-->
+            <script type="text/html" id="opeBar">
+                <a class="layui-btn layui-btn-info layui-btn-xs" title="优化表" onclick="together('{:url('optimize')}','{{d.name}}')" ><i class="fa fa-line-chart"></i></a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" title="修复表" onclick="together('{:url('repair')}','{{d.name}}')" ><i class="fa fa-wrench"></i></a>
+            </script>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['index', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+        table.render({
+            elem: '#LAY-table-manage'
+            , url: '{:url("Data/index")}'
+            ,response: {
+                statusCode: 220 //成功的状态码，默认：0
+            }
+            , page: false
+            , even: false //开启隔行背景
+            , size: 'lg' //sm小尺寸的表格 lg大尺寸
+            // ,width:100
+            , cellMinWidth: 150
+            , limits: [5, 10, 15, 20, 25, 30]
+            , limit: "{:config('pages')}"
+            , loading: true
+            , id: 'LAY-table'
+            , cols: [[
+                {type: 'checkbox', fixed: 'left',LAY_CHECKED:true}
+                , {field: 'name', width: '', title: '表名',align: 'center'}
+                , {field: 'comment', width: '', title: '注释', align: 'center'}
+                , {field: 'engine', width: 90, title: '引擎', align: 'center'}
+                , {field: 'rows', width: '', title: '数据量', align: 'center',templet:'<div>【{{d.rows}}】条记录</div>'}
+                , {field: 'data_length', width: '', title: '数据大小',align: 'center'}
+                , {field: 'create_time', width: '', title: '创建时间', align: 'center',templet:"<div>{{d.create_time?layui.util.toDateString(d.create_time,'yyyy-MM-dd HH:MM'):''}}</div>"}
+                , {width: '', title: '状态', align: 'center',templet:"<div><span class='layui-badge layui-bg-orange' id='backup_{{d.name}}'>等待备份...</span></div>"}
+                , {fixed: 'right', width: 100, title: '操作', align: 'center', toolbar: '#opeBar'}
+            ]]
+        });
+        //事件
+        var active = {
+            //备份数据库
+            backups: function() {
+                var $export = $('#export');
+                $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+                $export.html("正在发送备份请求...");
+                $.post("{:url('export')}",{ids:getIds()},function (data) {
+                    if (data.code) {
+                        tables = data.data.tables;
+                        $export.html(data.msg + "开始备份，请不要关闭本页面！");
+                        backup(data.data.tab);
+                        window.onbeforeunload = function () {
+                            return "正在备份数据库，请不要关闭！";
+                        };
+                    } else {
+                        if (data.code == 100) {
+                            wk.error(data.msg, 2, '');
+                        }
+                        $export.html("立即备份");
+                        setTimeout(function () {
+                            $('.layui-btn').removeClass('layui-disabled').removeAttr('disabled');
+                        }, 1500);
+                    }
+                });
+            }
+            //优化表
+            ,optimize:function(){
+                together("{:url('optimize')}",getIds());
+            }
+            //修复表
+            ,repair:function(){
+                together("{:url('repair')}",getIds());
+            }
+        };
+
+        $('.layuiBtn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        //获取选中目标
+        var getIds = function () {
+            var ids = [];
+            var checkStatus = table.checkStatus('LAY-table')
+                ,data = checkStatus.data;
+            $.each(data,function(index,item){
+                ids.push(item['name'])
+            });
+            return ids;
+        }
+        //开始备份
+        var backup = function(tab, status) {
+            var $export = $('#export');
+            status && showmsg(tab.id, "开始备份...(0%)");
+            $.get("{:url('export')}", tab, function (data) {
+                if (data.code) {
+                    showmsg(tab.id, data.msg);
+                    if (!$.isPlainObject(data.data.tab)) {
+                        $('.layui-btn').removeClass('layui-disabled').removeAttr('disabled');
+                        $export.html("备份完成，点击重新备份");
+                        window.onbeforeunload = function () {
+                            return null;
+                        };
+                        return;
+                    }
+                    backup(data.data.tab, tab.id != data.data.tab.id);
+                } else {
+                    if(data.code == 100){
+                        wk.error(data.msg,2,'');
+                    }
+                    $export.html("立即备份");
+                    setTimeout(function () {
+                        $('.layui-btn').removeClass('layui-disabled').removeAttr('disabled');
+                    }, 1500);
+                }
+            });
+        }
+        var  showmsg = function(id, msg) {
+            var w = $('#backup_'+tables[id]);
+            w.removeClass('layui-bg-green').addClass('layui-bg-orange');
+            if(msg == '备份完成！'){
+                w.removeClass('layui-bg-orange').addClass('layui-bg-green');
+            }
+            w.html(msg);
+            // w.css('color','#1BB394');
+        }
+    });
+    //优化表&修复表
+    var together = function(url,data){
+        $.ajax({
+            url:url,
+            data:"ids="+data,
+            type:'post',
+            dataType:'json',
+            success:function(res){
+                if(res.code == 200){
+                    wk.success(res.msg,1,'');
+                } else if (res.code == 100){
+                    wk.error(res.msg,2,'');
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

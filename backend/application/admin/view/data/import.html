@@ -1,0 +1,145 @@
+{include file="public/header" /}
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <button class="layui-btn layui-btn-danger layuiBtn" data-type="getCheckData" >
+                <i class="fa fa-trash-o"></i> 批量删除
+            </button>
+        </div>
+        <div class="layui-card-body">
+            <table id="LAY-table-manage" lay-filter="LAY-table-manage"></table>
+            <!--操作模板-->
+            <script type="text/html" id="opeBar">
+                <a class="layui-btn layui-btn-xs"   onclick="restore('{:url('revert')}','{{d.time}}')" title="还原" ><i class="fa fa-magic"></i></a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" title="删除" onclick="dataDel(this,'{{d.time}}')"><i class="fa fa-trash-o"></i></a>
+            </script>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['index', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+        table.render({
+            elem: '#LAY-table-manage'
+            , url: '{:url("Data/import")}'
+            ,response: {
+                statusCode: 220 //成功的状态码，默认：0
+            }
+            , page: false
+            , even: false //开启隔行背景
+            , size: 'lg' //sm小尺寸的表格 lg大尺寸
+            // ,width:100
+            , cellMinWidth: 150
+            , limits: [5, 10, 15, 20, 25, 30]
+            , limit: "{:config('pages')}"
+            , loading: true
+            , id: 'LAY-table'
+            , cols: [[
+                {type: 'checkbox', fixed: 'left'}
+                , {field: 'time', width: '', title: '备份名称', align: 'center'}
+                , {field: 'part', width: '', title: '卷数', align: 'center'}
+                , {field: 'compress', width: 90, title: '压缩', align: 'center'}
+                , {field: 'size', width: '', title: '数据大小', align: 'center',}
+                , {field: 'date', width: '', title: '备份时间', align: 'center',templet:"<div>{{d.date?layui.util.toDateString(d.date,'yyyy-MM-dd HH:MM'):''}}</div>"}
+                , {width: '', title: '状态', align: 'center',templet:"<div><span id='restore_{{d.time}}'>-</span></div>"}
+                , {fixed: 'right', width: 90, title: '操作', align: 'center', toolbar: '#opeBar'}
+            ]]
+        });
+        var active = {
+            getCheckData: function(){
+                layer.confirm('确认批量删除备份文件吗?', {icon: 3, title:'提示'}, function(index){
+                    $.ajax({
+                        url: "{:url('batchDelData')}",
+                        type: "post",
+                        dataType: "json",
+                        data: "ids=" + getIds(),
+                        success: function (res) {
+                            if(res.code == 200){
+                                layer.msg(res.msg,{icon:1,time:1500,shade:0.1},function(){
+                                    if (res.data != "") {
+                                        $.each(res.data, function (index, item) {
+                                            $('#restore_' + item).parents("tr").remove();
+                                        })
+                                    }
+                                })
+                            } else if (res.code == 100){
+                                wk.error(res.msg,2,'');
+                            }
+                        }
+                    });
+                })
+            }
+        };
+
+        $('.layuiBtn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        //获取选中目标
+        var getIds = function () {
+            var ids = [];
+            var checkStatus = table.checkStatus('LAY-table')
+                ,data = checkStatus.data;
+            $.each(data,function(index,item){
+                ids.push(item['time'])
+            });
+            return ids;
+        }
+    });
+    //还原数据
+    var restore = function(url,time){
+        $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+        $.get(url,{time:time} , success, "json");
+        window.onbeforeunload = function () { return "正在还原数据库，请不要关闭！";};
+        return false;
+        function success(data) {
+            if (data.code) {
+                if (data.data.gz) {
+                    // data.msg += status;
+                    data.msg += '<i class="fa fa-refresh fa-spin"></i>';
+                    // if (status.length === 5) {
+                    //     status = ".";
+                    // } else {
+                    //     status += ".";
+                    // }
+                }
+                var w = $('#restore_'+time)
+                w.removeClass('layui-badge layui-bg-green').addClass('layui-badge layui-bg-blue');
+                w.html(data.msg);
+                if(data.data == 'success'){
+                    // w.css('color','#1BB394');
+                    w.removeClass('layui-bg-blue').addClass('layui-bg-green');
+                    $('.layui-btn').removeClass('layui-disabled').removeAttr('disabled');
+                }
+                if (data.data.part) {
+                    $.get(url, {"part": data.data.part, "start": data.data.start}, success, "json");
+                } else {
+                    window.onbeforeunload = function () {return null;};
+                }
+            }else{
+                $('.layui-btn').removeClass('layui-disabled').removeAttr('disabled');
+            }
+        }
+    }
+    //删除备份
+    function dataDel(obj,id){
+        layer.confirm('确认删除此备份?', {icon: 3, title:'提示'}, function(index){
+            $.getJSON("{:url('delData')}", {'id' : id}, function(res){
+                if(res.code == 200){
+                    layer.msg(res.msg,{icon:1,time:1500,shade: 0.1},function(index){
+                        layer.close(index);
+                        $(obj).parents("tr").remove();
+                    });
+                }else if(res.code == 100){
+                    wk.error(res.msg,2,'');
+                }
+            });
+        })
+    }
+</script>
+</body>
+</html>

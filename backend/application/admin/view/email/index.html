@@ -1,0 +1,187 @@
+{include file="public/header" /}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">邮件服务</div>
+                <div class="layui-card-body">
+
+                    <div class="layui-form layui-form-pane">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP服务器</label>
+                            <div class="layui-input-inline">
+                                <input type="text" value="{:config('smtp.server')}" class="layui-input layui-disabled" disabled>
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">如：smtp.163.com</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP端口号</label>
+                            <div class="layui-input-inline">
+                                <input type="text" value="{:config('smtp.serverport')}" class="layui-input layui-disabled" disabled>
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">一般为 25 或 465</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人邮箱</label>
+                            <div class="layui-input-inline">
+                                <input type="text" value="{:config('smtp.usermail')}" class="layui-input layui-disabled" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮箱登入密码</label>
+                            <div class="layui-input-inline">
+                                <input type="password"  value="{:config('smtp.pass')}" class="layui-input layui-disabled" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">收件人邮箱</label>
+                            <div class="layui-input-block">
+                                <input type="text" lay-verify="required" name="mailTo" class="layui-input" placeholder="多个邮箱请用逗号（英文）连接">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮件主题</label>
+                            <div class="layui-input-block">
+                                <input type="text" lay-verify="required" name="subject" class="layui-input" placeholder="文本">
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">邮件内容</label>
+                            <div class="layui-input-block">
+                                <textarea name="body" lay-verify="required" class="layui-textarea" placeholder="文本/HTML"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="send_system_email">发送</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">云之讯短信</div>
+                <div class="layui-card-body">
+
+                    <div class="layui-form layui-form-pane">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">验证码</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="code" value="{:GetRandCode()}" class="layui-input layui-disabled" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="phone" lay-verify="phone" class="layui-input" placeholder="中国大陆手机号" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="send_yzx_code">发送</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">阿里短信</div>
+                <div class="layui-card-body">
+
+                    <div class="layui-form layui-form-pane">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">验证码</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="code" value="{:GetRandCode()}" class="layui-input layui-disabled" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="phone" lay-verify="phone" class="layui-input" placeholder="中国大陆手机号" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="send_ali_code">发送</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['form'],function () {
+        var form = layui.form
+        form.on('submit(send_system_email)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            var loading = layer.load(3);
+            $.ajax({
+                url:"{:url('sendEmail')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        layer.close(loading);
+                        wk.success(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    } else {
+                        layer.close(loading);
+                        wk.error(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    }
+                }
+            })
+        })
+        form.on('submit(send_yzx_code)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            var loading = layer.load(3);
+            $.ajax({
+                url:"{:url('sendYzxCode')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        layer.close(loading);
+                        wk.success(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    } else {
+                        layer.close(loading);
+                        wk.error(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    }
+                }
+            })
+        })
+        form.on('submit(send_ali_code)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            var loading = layer.load(3);
+            $.ajax({
+                url:"{:url('sendAliCode')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        layer.close(loading);
+                        wk.success(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    } else {
+                        layer.close(loading);
+                        wk.error(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "require": {
+        "workerman/workerman": "^3.3.0",
+        "workerman/gateway-worker" : ">=3.0.0",
+        "evan-li/think-gateway": "^0.2.1",
+        "workerman/gatewayclient": "^3.0",
+        "alipaysdk/easysdk": "^2.0"
+    }
+}

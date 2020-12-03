@@ -1,0 +1,75 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="layui-fluid layui-col-md12">
+    <div class="layui-card">
+        <div class="layui-card-body layui-form">
+            <input type="hidden" value="{$role.id}" name="id"/>
+            <div class="layui-row layui-col-space10 layui-form-item ">
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="required|rolename" placeholder="角色名称" class="layui-input " value="{$role.title}">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <label class="layui-form-label">描述</label>
+                    <div class="layui-input-block">
+                        <textarea name="describe" placeholder="角色描述" lay-verify="required" class="layui-textarea" maxlength="200">{$role.describe}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-col-md-offset1 layui-col-md8">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">保存
+                        </button>
+                        <button class="layui-btn layui-btn-primary" onclick="wk.layer_close('close')">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file="public/footer" /}
+<script>
+    layui.use(['form'], function() {
+        var form = layui.form;
+        form.verify({
+            rolename:function(value,item){
+                if(!/^[\S]{2,10}$/.test(value)){
+                    return '名称必须2到10字符，且不能出现空格';
+                }
+                var checkResult = "";
+                $.ajax({
+                    url:"{:url('Role/checkRole')}",
+                    type:'post',
+                    data:"title="+value + "&id=" +$('input[name=id]').val(),
+                    async: false,//必须同步
+                    success:function(res){
+                        if(res.code == 100){
+                            checkResult = "该名称已存在";
+                        }
+                    }
+                })
+                return checkResult;
+            }
+        });
+        form.on('submit(component-form-element)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            $.ajax({
+                url:"{:url('roleEdit')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        wk.success(res.msg,'wk.layer_close()');
+                    } else {
+                        wk.error(res.msg,'$(".layui-btn").removeClass(\'layui-disabled\').removeAttr(\'disabled\')');
+                    }
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

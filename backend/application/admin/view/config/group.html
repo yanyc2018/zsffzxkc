@@ -1,0 +1,82 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="layui-fluid layui-col-xs12">
+    <div class="layui-card">
+        <div class="layui-tab layui-tab-card">
+            <ul class="layui-tab-title">
+                {volist name="Think.config.config_group_list" id="group"}
+                <a href="{:url('?id='.$key)}"><li {eq name="id" value="$key"}class="layui-this"{/eq}>{$group}配置</li></a>
+                {/volist}
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show ">
+                    <div class="layui-form">
+                        <div class="layui-row layui-col-space10 layui-form-item ">
+                            {volist name="list" id="config"}
+                                <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                                    <label class="layui-form-label">{$config.title}</label>
+                                    <div class="layui-input-block">
+                                        {switch name="config.type"}
+                                        {case value="0"}
+                                            <input type="text"name="config[{$config.name}]" value="{$config.value}" lay-verify="required|number" placeholder="{$config.remark}" class="layui-input ">
+                                        {/case}
+                                        {case value="1"}
+                                            <input type="text" name="config[{$config.name}]" value="{$config.value}" lay-verify="required" placeholder="{$config.remark}" class="layui-input ">
+                                        {/case}
+                                        {case value="2"}
+                                            <textarea name="config[{$config.name}]" placeholder="{$config.remark}" lay-verify="required" class="layui-textarea">{$config.value}</textarea>
+                                        {/case}
+                                        {case value="3"}
+                                            <textarea name="config[{$config.name}]" placeholder="{$config.remark}" lay-verify="required" class="layui-textarea">{$config.value}</textarea>
+                                        {/case}
+                                        {case value="4"}
+                                            <select name="config[{$config.name}]" lay-verify="required" lay-search="">
+                                                {volist name=":parse_config_attr($config['extra'])" id="vo"}
+                                                <option value="{$key}" {eq name="config.value" value="$key"}selected{/eq}>{$vo}</option>
+                                                {/volist}
+                                            </select>
+                                        {/case}
+                                        {/switch}
+                                    </div>
+                                </div>
+                            {/volist}
+                            {if condition='!empty($list)'}
+                            <div class="layui-form-item layui-col-xs-offset1 layui-col-xs8">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit="" lay-filter="component-form-element">保存
+                                    </button>
+                                </div>
+                            </div>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['form'], function() {
+        var form = layui.form;
+        form.on('submit(component-form-element)', function (data) {
+            $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
+            $.ajax({
+                url:"{:url('save')}",
+                type:'post',
+                dataType:'json',
+                data:data.field,
+                success:function(res){
+                    if (res.code == 200) {
+                        wk.success(res.msg);
+                    } else {
+                        wk.error(res.msg);
+                    }
+                    $(".layui-btn").removeClass('layui-disabled').removeAttr('disabled');
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

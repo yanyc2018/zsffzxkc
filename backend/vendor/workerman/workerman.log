@@ -1,0 +1,1636 @@
+2020-10-22 14:30:29 pid:7181 Workerman[think socket] start in DEBUG mode
+2020-10-22 14:31:24 pid:7181 Workerman[think] stopping ...
+2020-10-22 14:31:24 pid:7181 Workerman[think] has been stopped
+2020-10-22 14:38:12 pid:12807 Workerman[think socket] start in DEBUG mode
+2020-10-22 14:39:19 pid:12807 Workerman[think] stopping ...
+2020-10-22 14:39:19 pid:12807 Workerman[think] has been stopped
+2020-10-22 14:52:24 pid:23238 Workerman[think socket] start in DEBUG mode
+2020-10-22 14:58:47 pid:23238 Workerman[think] stopping ...
+2020-10-22 14:58:47 pid:23238 Workerman[think] has been stopped
+2020-10-22 15:04:46 pid:32634 Workerman[think socket] start in DEBUG mode
+2020-10-22 16:02:38 pid:32634 Workerman[think] stopping ...
+2020-10-22 16:02:38 pid:32634 Workerman[think] has been stopped
+2020-10-22 17:39:50 pid:16670 Workerman[think socket] start in DEBUG mode
+2020-10-22 17:44:49 pid:16673 think\exception\ErrorException: Illegal string offset 'send_msg' in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:60
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(60): think\Error::appError(2, 'Illegal string ...', '/www/wwwroot/zs...', 60, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), 'tom')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(71): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-22 17:44:49 pid:16673 Worker[16673] process terminated
+2020-10-22 17:44:49 pid:16670 worker[none:16673] exit with status 64000
+2020-10-22 17:51:11 pid:20382 think\exception\ErrorException: Illegal string offset 'send_msg' in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:60
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(60): think\Error::appError(2, 'Illegal string ...', '/www/wwwroot/zs...', 60, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), 'tom')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #62)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(71): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-22 17:51:11 pid:20382 Worker[20382] process terminated
+2020-10-22 17:51:11 pid:16670 worker[none:20382] exit with status 64000
+2020-10-22 17:52:47 pid:16674 think\exception\ErrorException: Illegal string offset 'send_msg' in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:60
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(60): think\Error::appError(2, 'Illegal string ...', '/www/wwwroot/zs...', 60, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), 'tom')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(71): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-22 17:52:47 pid:16674 Worker[16674] process terminated
+2020-10-22 17:52:47 pid:16670 worker[none:16674] exit with status 64000
+2020-10-22 17:56:47 pid:25015 think\exception\ErrorException: Illegal string offset 'send_msg' in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:60
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(60): think\Error::appError(2, 'Illegal string ...', '/www/wwwroot/zs...', 60, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), 'tom')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #63)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(71): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-22 17:56:47 pid:25015 Worker[25015] process terminated
+2020-10-22 17:56:47 pid:16670 worker[none:25015] exit with status 64000
+2020-10-22 17:59:38 pid:26181 think\exception\ErrorException: Illegal string offset 'send_msg' in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:60
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(60): think\Error::appError(2, 'Illegal string ...', '/www/wwwroot/zs...', 60, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), '123')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(71): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-22 17:59:38 pid:26181 Worker[26181] process terminated
+2020-10-22 17:59:38 pid:16670 worker[none:26181] exit with status 64000
+2020-10-22 18:13:32 pid:31161 think\exception\ErrorException: Illegal string offset 'send_msg' in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:60
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(60): think\Error::appError(2, 'Illegal string ...', '/www/wwwroot/zs...', 60, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), 'tom')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #66)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(71): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-22 18:13:32 pid:31161 Worker[31161] process terminated
+2020-10-22 18:13:32 pid:16670 worker[none:31161] exit with status 64000
+2020-10-22 18:16:58 pid:9031 think\exception\ErrorException: Illegal string offset 'send_msg' in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:60
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(60): think\Error::appError(2, 'Illegal string ...', '/www/wwwroot/zs...', 60, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), 'tom')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #67)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(71): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-22 18:16:58 pid:9031 Worker[9031] process terminated
+2020-10-22 18:16:58 pid:16670 worker[none:9031] exit with status 64000
+2020-10-22 18:25:41 pid:16670 Workerman[think] stopping ...
+2020-10-22 18:25:41 pid:16670 Workerman[think] has been stopped
+2020-10-22 18:29:10 pid:20609 Workerman[think socket] start in DEBUG mode
+2020-10-22 18:29:50 pid:20609 Workerman[think] stopping ...
+2020-10-22 18:29:50 pid:20609 Workerman[think] has been stopped
+2020-10-22 18:32:07 pid:22801 Workerman[think socket] start in DEBUG mode
+2020-10-23 10:17:24 pid:1416 Workerman[think socket] stop 
+2020-10-23 10:17:24 pid:1416 Workerman[think socket] not run
+2020-10-23 10:17:38 pid:1601 Workerman[think socket] start in DEBUG mode
+2020-10-23 10:30:37 pid:1601 Workerman[think] stopping ...
+2020-10-23 10:30:37 pid:1601 Workerman[think] has been stopped
+2020-10-23 10:30:39 pid:11165 Workerman[think socket] start in DEBUG mode
+2020-10-23 10:35:25 pid:11165 Workerman[think] stopping ...
+2020-10-23 10:35:25 pid:11165 Workerman[think] has been stopped
+2020-10-23 10:35:27 pid:14649 Workerman[think socket] start in DEBUG mode
+2020-10-23 10:35:38 pid:14652 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(70): Workerman\Connection\TcpConnection->send(NULL)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), NULL)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(73): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 10:35:38 pid:14652 Worker[14652] process terminated
+2020-10-23 10:35:38 pid:14649 worker[none:14652] exit with status 64000
+2020-10-23 10:36:52 pid:14650 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(70): Workerman\Connection\TcpConnection->send(NULL)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), NULL)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(73): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 10:36:52 pid:14650 Worker[14650] process terminated
+2020-10-23 10:36:52 pid:14649 worker[none:14650] exit with status 64000
+2020-10-23 10:37:34 pid:14649 Workerman[think] stopping ...
+2020-10-23 10:37:34 pid:14649 Workerman[think] has been stopped
+2020-10-23 10:37:36 pid:16229 Workerman[think socket] start in DEBUG mode
+2020-10-23 10:37:48 pid:16233 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(70): Workerman\Connection\TcpConnection->send(NULL)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), NULL)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(73): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 10:37:48 pid:16233 Worker[16233] process terminated
+2020-10-23 10:37:48 pid:16229 worker[none:16233] exit with status 64000
+2020-10-23 10:37:59 pid:16230 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(70): Workerman\Connection\TcpConnection->send(NULL)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), NULL)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(73): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 10:37:59 pid:16230 Worker[16230] process terminated
+2020-10-23 10:37:59 pid:16229 worker[none:16230] exit with status 64000
+2020-10-23 10:39:17 pid:16229 Workerman[think] stopping ...
+2020-10-23 10:39:17 pid:16229 Workerman[think] has been stopped
+2020-10-23 10:39:20 pid:17516 Workerman[think socket] start in DEBUG mode
+2020-10-23 10:39:26 pid:17520 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(70): Workerman\Connection\TcpConnection->send(NULL)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), NULL)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(73): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 10:39:26 pid:17520 Worker[17520] process terminated
+2020-10-23 10:39:26 pid:17516 worker[none:17520] exit with status 64000
+2020-10-23 10:39:33 pid:17518 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(70): Workerman\Connection\TcpConnection->send(NULL)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), NULL)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(73): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 10:39:33 pid:17518 Worker[17518] process terminated
+2020-10-23 10:39:33 pid:17516 worker[none:17518] exit with status 64000
+2020-10-23 10:42:12 pid:17516 Workerman[think] stopping ...
+2020-10-23 10:42:12 pid:17516 Workerman[think] has been stopped
+2020-10-23 10:42:14 pid:19712 Workerman[think socket] start in DEBUG mode
+2020-10-23 11:11:18 pid:19712 Workerman[think] stopping ...
+2020-10-23 11:11:18 pid:19712 Workerman[think] has been stopped
+2020-10-23 11:11:21 pid:8587 Workerman[think socket] start in DEBUG mode
+2020-10-23 11:17:04 pid:8587 Workerman[think] stopping ...
+2020-10-23 11:17:04 pid:8587 Workerman[think] has been stopped
+2020-10-23 11:17:05 pid:12776 Workerman[think socket] start in DEBUG mode
+2020-10-23 11:39:24 pid:12776 Workerman[think] stopping ...
+2020-10-23 11:39:24 pid:12776 Workerman[think] has been stopped
+2020-10-23 11:39:25 pid:29125 Workerman[think socket] start in DEBUG mode
+2020-10-23 11:39:30 pid:29127 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(80): Workerman\Connection\TcpConnection->send(Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(85): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 11:39:30 pid:29127 Worker[29127] process terminated
+2020-10-23 11:39:31 pid:29125 worker[none:29127] exit with status 64000
+2020-10-23 11:40:02 pid:29205 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(80): Workerman\Connection\TcpConnection->send(Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #62)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(85): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-23 11:40:02 pid:29205 Worker[29205] process terminated
+2020-10-23 11:40:02 pid:29125 worker[none:29205] exit with status 64000
+2020-10-23 11:40:29 pid:29126 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(80): Workerman\Connection\TcpConnection->send(Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(85): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 11:40:29 pid:29126 Worker[29126] process terminated
+2020-10-23 11:40:29 pid:29125 worker[none:29126] exit with status 64000
+2020-10-23 11:40:52 pid:29129 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(80): Workerman\Connection\TcpConnection->send(Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(85): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 11:40:52 pid:29129 Worker[29129] process terminated
+2020-10-23 11:40:52 pid:29125 worker[none:29129] exit with status 64000
+2020-10-23 11:41:25 pid:29587 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(80): Workerman\Connection\TcpConnection->send(Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #63)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(85): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-23 11:41:25 pid:29587 Worker[29587] process terminated
+2020-10-23 11:41:25 pid:29125 worker[none:29587] exit with status 64000
+2020-10-23 11:42:58 pid:30600 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(80): Workerman\Connection\TcpConnection->send(Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #66)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(85): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-23 11:42:58 pid:30600 Worker[30600] process terminated
+2020-10-23 11:42:58 pid:29125 worker[none:30600] exit with status 64000
+2020-10-23 11:53:15 pid:29125 Workerman[think] stopping ...
+2020-10-23 11:53:15 pid:29125 Workerman[think] has been stopped
+2020-10-23 11:53:17 pid:6895 Workerman[think socket] start in DEBUG mode
+2020-10-23 11:53:37 pid:6896 Error: Class 'app\socket\command\Redis' not found in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:65
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#7 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(87): Workerman\Worker::runAll()
+#8 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#14 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#15 {main}
+2020-10-23 11:53:37 pid:6896 Worker[6896] process terminated
+2020-10-23 11:53:37 pid:6895 worker[none:6896] exit with status 64000
+2020-10-23 11:56:06 pid:6895 Workerman[think] stopping ...
+2020-10-23 11:56:06 pid:6895 Workerman[think] has been stopped
+2020-10-23 11:56:07 pid:9008 Workerman[think socket] start in DEBUG mode
+2020-10-23 11:56:18 pid:9012 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(83): Workerman\Connection\TcpConnection->send(Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #61)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#9 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(88): Workerman\Worker::runAll()
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#16 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#17 {main}
+2020-10-23 11:56:18 pid:9012 Worker[9012] process terminated
+2020-10-23 11:56:18 pid:9008 worker[none:9012] exit with status 64000
+2020-10-23 11:57:50 pid:9008 Workerman[think] stopping ...
+2020-10-23 11:57:50 pid:9008 Workerman[think] has been stopped
+2020-10-23 11:57:52 pid:10296 Workerman[think socket] start in DEBUG mode
+2020-10-23 12:02:30 pid:10296 Workerman[think] stopping ...
+2020-10-23 12:02:30 pid:10296 Workerman[think] has been stopped
+2020-10-23 12:02:32 pid:13757 Workerman[think socket] start in DEBUG mode
+2020-10-25 13:20:30 pid:6446 Workerman[think socket] start in DAEMON mode
+2020-10-25 13:21:22 pid:6449 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #65)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-25 13:21:22 pid:6449 Worker[6449] process terminated
+2020-10-25 13:21:22 pid:6448 worker[none:6449] exit with status 64000
+2020-10-25 13:29:38 pid:13116 Workerman[think socket] stop 
+2020-10-25 13:29:38 pid:13116 Workerman[think socket] is stopping ...
+2020-10-25 13:29:38 pid:6448 Workerman[think] stopping ...
+2020-10-25 13:29:38 pid:6448 Workerman[think] has been stopped
+2020-10-25 13:29:38 pid:13116 Workerman[think socket] stop success
+2020-10-25 13:29:46 pid:13214 Workerman[think socket] start in DAEMON mode
+2020-10-25 13:30:30 pid:13219 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-25 13:30:30 pid:13219 Worker[13219] process terminated
+2020-10-25 13:30:30 pid:13216 worker[none:13219] exit with status 64000
+2020-10-25 13:33:49 pid:13762 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #65)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-25 13:33:49 pid:13762 Worker[13762] process terminated
+2020-10-25 13:33:49 pid:13216 worker[none:13762] exit with status 64000
+2020-10-25 13:34:50 pid:16915 Workerman[think socket] stop 
+2020-10-25 13:34:50 pid:16915 Workerman[think socket] is stopping ...
+2020-10-25 13:34:50 pid:13216 Workerman[think] stopping ...
+2020-10-25 13:34:50 pid:13216 Workerman[think] has been stopped
+2020-10-25 13:34:50 pid:16915 Workerman[think socket] stop success
+2020-10-25 13:34:53 pid:16954 Workerman[think socket] start in DAEMON mode
+2020-10-25 13:35:08 pid:16959 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-25 13:35:08 pid:16959 Worker[16959] process terminated
+2020-10-25 13:35:08 pid:16956 worker[none:16959] exit with status 64000
+2020-10-25 13:38:22 pid:16958 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-25 13:38:22 pid:16958 Worker[16958] process terminated
+2020-10-25 13:38:22 pid:16956 worker[none:16958] exit with status 64000
+2020-10-25 13:40:39 pid:16960 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-25 13:40:39 pid:16960 Worker[16960] process terminated
+2020-10-25 13:40:39 pid:16956 worker[none:16960] exit with status 64000
+2020-10-25 13:41:54 pid:17152 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #65)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-25 13:41:54 pid:17152 Worker[17152] process terminated
+2020-10-25 13:41:54 pid:16956 worker[none:17152] exit with status 64000
+2020-10-25 13:42:24 pid:22554 Workerman[think socket] stop 
+2020-10-25 13:42:24 pid:22554 Workerman[think socket] is stopping ...
+2020-10-25 13:42:24 pid:16956 Workerman[think] stopping ...
+2020-10-25 13:42:24 pid:16956 Workerman[think] has been stopped
+2020-10-25 13:42:24 pid:22554 Workerman[think socket] stop success
+2020-10-25 13:42:27 pid:22592 Workerman[think socket] start in DAEMON mode
+2020-10-25 13:42:41 pid:22595 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php:66
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(66): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 66, Array)
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): app\socket\command\Socket->app\socket\command\{closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): Workerman\Worker->run()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/zsff.sxjiangyan.com/application/socket/command/Socket.php(86): Workerman\Worker::runAll()
+#9 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\socket\command\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#10 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\socket\command\Socket), Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#15 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#16 {main}
+2020-10-25 13:42:41 pid:22595 Worker[22595] process terminated
+2020-10-25 13:42:41 pid:22594 worker[none:22595] exit with status 64000
+2020-10-25 13:45:00 pid:24476 Workerman[think socket] stop 
+2020-10-25 13:45:00 pid:24476 Workerman[think socket] is stopping ...
+2020-10-25 13:45:00 pid:22594 Workerman[think] stopping ...
+2020-10-25 13:45:00 pid:22594 Workerman[think] has been stopped
+2020-10-25 13:45:00 pid:24476 Workerman[think socket] stop success
+2020-10-25 13:45:02 pid:24503 Workerman[think socket] start in DAEMON mode
+2020-10-26 10:43:22 pid:5655 Workerman[think socket] stop 
+2020-10-26 10:43:22 pid:5655 Workerman[think socket] is stopping ...
+2020-10-26 10:43:22 pid:24505 Workerman[think] stopping ...
+2020-10-26 10:43:22 pid:24505 Workerman[think] has been stopped
+2020-10-26 10:43:22 pid:5655 Workerman[think socket] stop success
+2020-10-26 11:49:03 pid:21341 Workerman[think socket] start in DAEMON mode
+2020-10-26 16:04:46 pid:14865 Workerman[think socket] stop 
+2020-10-26 16:04:46 pid:14865 Workerman[think socket] is stopping ...
+2020-10-26 16:04:46 pid:21343 Workerman[think] stopping ...
+2020-10-26 16:04:46 pid:21343 Workerman[think] has been stopped
+2020-10-26 16:04:46 pid:14865 Workerman[think socket] stop success
+2020-10-26 17:03:14 pid:25234 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:06:55 pid:25238 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-10-26 17:06:55 pid:25238 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-10-26 17:07:36 pid:25238 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-10-26 17:07:36 pid:25238 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-10-26 17:26:38 pid:25234 Workerman[think] stopping ...
+2020-10-26 17:26:38 pid:25234 Workerman[think] has been stopped
+2020-10-26 17:26:42 pid:10012 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:32:04 pid:10012 Workerman[think] stopping ...
+2020-10-26 17:32:04 pid:10012 Workerman[think] has been stopped
+2020-10-26 17:35:22 pid:16352 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:35:32 pid:16352 Workerman[think] stopping ...
+2020-10-26 17:35:32 pid:16352 Workerman[think] has been stopped
+2020-10-26 17:42:05 pid:21420 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:42:11 pid:21420 Workerman[think] stopping ...
+2020-10-26 17:42:11 pid:21420 Workerman[think] has been stopped
+2020-10-26 17:51:32 pid:28349 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:51:36 pid:28349 Workerman[think] stopping ...
+2020-10-26 17:51:36 pid:28349 Workerman[think] has been stopped
+2020-10-26 17:55:00 pid:30874 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:55:07 pid:30874 Workerman[think] stopping ...
+2020-10-26 17:55:07 pid:30874 Workerman[think] has been stopped
+2020-10-26 17:56:39 pid:32082 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:56:44 pid:32082 Workerman[think] stopping ...
+2020-10-26 17:56:44 pid:32082 Workerman[think] has been stopped
+2020-10-26 17:57:07 pid:32430 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:58:04 pid:32430 Workerman[think] stopping ...
+2020-10-26 17:58:04 pid:32430 Workerman[think] has been stopped
+2020-10-26 17:58:06 pid:695 Workerman[think socket] start in DEBUG mode
+2020-10-26 17:58:53 pid:695 Workerman[think] stopping ...
+2020-10-26 17:58:53 pid:695 Workerman[think] has been stopped
+2020-10-26 17:58:55 pid:1340 Workerman[think socket] start in DEBUG mode
+2020-10-26 18:07:09 pid:1340 Workerman[think] stopping ...
+2020-10-26 18:07:09 pid:1340 Workerman[think] has been stopped
+2020-10-26 18:11:23 pid:10517 Workerman[think socket] start in DEBUG mode
+2020-10-26 18:11:27 pid:10517 Workerman[think] stopping ...
+2020-10-26 18:11:27 pid:10517 Workerman[think] has been stopped
+2020-10-26 18:12:28 pid:11320 Workerman[think socket] start in DEBUG mode
+2020-10-26 18:12:34 pid:11320 Workerman[think] stopping ...
+2020-10-26 18:12:34 pid:11320 Workerman[think] has been stopped
+2020-10-26 18:14:18 pid:12639 Workerman[think socket] start in DEBUG mode
+2020-10-26 18:14:35 pid:12639 Workerman[think] stopping ...
+2020-10-26 18:14:35 pid:12639 Workerman[think] has been stopped
+2020-10-26 18:14:44 pid:12975 Workerman[think socket] stop 
+2020-10-26 18:14:44 pid:12975 Workerman[think socket] not run
+2020-10-26 18:18:39 pid:15822 Workerman[think socket] stop 
+2020-10-26 18:18:39 pid:15822 Workerman[think socket] not run
+2020-10-26 18:18:41 pid:15840 Workerman[think socket] start in DEBUG mode
+2020-10-26 18:19:00 pid:15840 Workerman[think] stopping ...
+2020-10-26 18:19:00 pid:15840 Workerman[think] has been stopped
+2020-10-26 18:19:35 pid:16510 Workerman[think socket] start in DEBUG mode
+2020-10-26 18:21:28 pid:16510 Workerman[think] stopping ...
+2020-10-26 18:21:28 pid:16510 Workerman[think] has been stopped
+2020-10-26 18:21:30 pid:17941 Workerman[think socket] start in DEBUG mode
+2020-10-27 09:14:39 pid:23397 Workerman[think socket] start in DAEMON mode
+2020-10-27 10:47:45 pid:26718 Workerman[think socket] stop 
+2020-10-27 10:47:45 pid:26718 Workerman[think socket] is stopping ...
+2020-10-27 10:47:45 pid:23400 Workerman[think] stopping ...
+2020-10-27 10:47:45 pid:23400 Workerman[think] has been stopped
+2020-10-27 10:47:45 pid:26718 Workerman[think socket] stop success
+2020-10-27 10:47:53 pid:26810 Workerman[think socket] start in DAEMON mode
+2020-10-27 10:48:05 pid:26816 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:56
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(56): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 56, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #82)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 10:48:05 pid:26816 Worker[26816] process terminated
+2020-10-27 10:48:05 pid:26812 worker[ZSFFBusinessWorker:26816] exit with status 64000
+2020-10-27 10:48:24 pid:26819 Exception: You can't send(array) to client, you need to convert it to a string.  in /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(344): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/Gateway.php(614): Workerman\Connection\TcpConnection->send(Array, false)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\Gateway->onWorkerMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #88)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/Gateway.php(276): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\Gateway->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\Gateway))
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-27 10:48:24 pid:26819 Worker[26819] process terminated
+2020-10-27 10:48:24 pid:26812 worker[ZSFFGateway:26819] exit with status 64000
+2020-10-27 10:49:23 pid:26815 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:56
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(56): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 56, Array)
+#1 [internal function]: Events::onMessage('7f0000010b54000...', Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b54000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #84)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 10:49:23 pid:26815 Worker[26815] process terminated
+2020-10-27 10:49:23 pid:26812 worker[ZSFFBusinessWorker:26815] exit with status 64000
+2020-10-27 10:52:00 pid:29836 Workerman[think socket] stop 
+2020-10-27 10:52:00 pid:29836 Workerman[think socket] is stopping ...
+2020-10-27 10:52:00 pid:26812 Workerman[think] stopping ...
+2020-10-27 10:52:00 pid:26812 Workerman[think] has been stopped
+2020-10-27 10:52:00 pid:29836 Workerman[think socket] stop success
+2020-10-27 10:52:04 pid:29908 Workerman[think socket] start in DAEMON mode
+2020-10-27 10:52:18 pid:29911 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:56
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(56): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 56, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 10:52:18 pid:29911 Worker[29911] process terminated
+2020-10-27 10:52:18 pid:29910 worker[ZSFFBusinessWorker:29911] exit with status 64000
+2020-10-27 10:53:48 pid:29912 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:56
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(56): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 56, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 10:53:48 pid:29912 Worker[29912] process terminated
+2020-10-27 10:53:48 pid:29910 worker[ZSFFBusinessWorker:29912] exit with status 64000
+2020-10-27 10:54:18 pid:30100 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:56
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(56): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 56, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #82)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 10:54:18 pid:30100 Worker[30100] process terminated
+2020-10-27 10:54:18 pid:29910 worker[ZSFFBusinessWorker:30100] exit with status 64000
+2020-10-27 10:55:06 pid:31558 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:56
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(56): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 56, Array)
+#1 [internal function]: Events::onMessage('7f0000010b54000...', Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b54000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #81)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 10:55:06 pid:31558 Worker[31558] process terminated
+2020-10-27 10:55:06 pid:29910 worker[ZSFFBusinessWorker:31558] exit with status 64000
+2020-10-27 10:55:37 pid:32151 think\exception\ErrorException: Undefined index: send_msg in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:56
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(56): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 56, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', Array)
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #85)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 10:55:37 pid:32151 Worker[32151] process terminated
+2020-10-27 10:55:37 pid:29910 worker[ZSFFBusinessWorker:32151] exit with status 64000
+2020-10-27 10:56:54 pid:1004 Workerman[think socket] stop 
+2020-10-27 10:56:54 pid:1004 Workerman[think socket] is stopping ...
+2020-10-27 10:56:54 pid:29910 Workerman[think] stopping ...
+2020-10-27 10:56:54 pid:29910 Workerman[think] has been stopped
+2020-10-27 10:56:54 pid:1004 Workerman[think socket] stop success
+2020-10-27 10:56:56 pid:1029 Workerman[think socket] start in DAEMON mode
+2020-10-27 11:40:46 pid:681 Workerman[think socket] stop 
+2020-10-27 11:40:47 pid:681 Workerman[think socket] is stopping ...
+2020-10-27 11:40:47 pid:1031 Workerman[think] stopping ...
+2020-10-27 11:40:47 pid:1031 Workerman[think] has been stopped
+2020-10-27 11:40:47 pid:681 Workerman[think socket] stop success
+2020-10-27 11:40:49 pid:720 Workerman[think socket] start in DAEMON mode
+2020-10-27 11:40:54 pid:726 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #82)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:40:54 pid:726 Worker[726] process terminated
+2020-10-27 11:40:54 pid:722 worker[ZSFFBusinessWorker:726] exit with status 64000
+2020-10-27 11:41:07 pid:725 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":2,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:41:07 pid:725 Worker[725] process terminated
+2020-10-27 11:41:07 pid:722 worker[ZSFFBusinessWorker:725] exit with status 64000
+2020-10-27 11:41:21 pid:991 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":2,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #81)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:41:21 pid:991 Worker[991] process terminated
+2020-10-27 11:41:21 pid:722 worker[ZSFFBusinessWorker:991] exit with status 64000
+2020-10-27 11:41:49 pid:808 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:41:49 pid:808 Worker[808] process terminated
+2020-10-27 11:41:49 pid:722 worker[ZSFFBusinessWorker:808] exit with status 64000
+2020-10-27 11:42:12 pid:724 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b54000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b54000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #78)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:42:12 pid:724 Worker[724] process terminated
+2020-10-27 11:42:12 pid:722 worker[ZSFFBusinessWorker:724] exit with status 64000
+2020-10-27 11:43:45 pid:2956 Workerman[think socket] stop 
+2020-10-27 11:43:45 pid:2956 Workerman[think socket] is stopping ...
+2020-10-27 11:43:45 pid:722 Workerman[think] stopping ...
+2020-10-27 11:43:45 pid:722 Workerman[think] has been stopped
+2020-10-27 11:43:45 pid:2956 Workerman[think socket] stop success
+2020-10-27 11:43:47 pid:2970 Workerman[think socket] start in DAEMON mode
+2020-10-27 11:43:59 pid:2974 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', '{"uid":2,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #79)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:43:59 pid:2974 Worker[2974] process terminated
+2020-10-27 11:43:59 pid:2972 worker[ZSFFBusinessWorker:2974] exit with status 64000
+2020-10-27 11:44:10 pid:3149 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', '{"uid":2,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:44:10 pid:3149 Worker[3149] process terminated
+2020-10-27 11:44:10 pid:2972 worker[ZSFFBusinessWorker:3149] exit with status 64000
+2020-10-27 11:44:23 pid:2976 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #79)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:44:23 pid:2976 Worker[2976] process terminated
+2020-10-27 11:44:23 pid:2972 worker[ZSFFBusinessWorker:2976] exit with status 64000
+2020-10-27 11:44:35 pid:2975 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b56000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #79)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:44:35 pid:2975 Worker[2975] process terminated
+2020-10-27 11:44:35 pid:2972 worker[ZSFFBusinessWorker:2975] exit with status 64000
+2020-10-27 11:44:52 pid:3598 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b54000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b54000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #82)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:44:52 pid:3598 Worker[3598] process terminated
+2020-10-27 11:44:52 pid:2972 worker[ZSFFBusinessWorker:3598] exit with status 64000
+2020-10-27 11:45:04 pid:2973 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:45:04 pid:2973 Worker[2973] process terminated
+2020-10-27 11:45:04 pid:2972 worker[ZSFFBusinessWorker:2973] exit with status 64000
+2020-10-27 11:45:12 pid:3964 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:63
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(63): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 63, Array)
+#1 [internal function]: Events::onMessage('7f0000010b57000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b57000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #87)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:45:12 pid:3964 Worker[3964] process terminated
+2020-10-27 11:45:12 pid:2972 worker[ZSFFBusinessWorker:3964] exit with status 64000
+2020-10-27 11:45:58 pid:4621 Workerman[think socket] stop 
+2020-10-27 11:45:58 pid:4621 Workerman[think socket] is stopping ...
+2020-10-27 11:45:58 pid:2972 Workerman[think] stopping ...
+2020-10-27 11:45:58 pid:2972 Workerman[think] has been stopped
+2020-10-27 11:45:58 pid:4621 Workerman[think socket] stop success
+2020-10-27 11:46:00 pid:4641 Workerman[think socket] start in DAEMON mode
+2020-10-27 11:46:09 pid:4644 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:91
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(91): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 91, Array)
+#1 [internal function]: Events::onMessage('7f0000010b57000...', '{"uid":2,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b57000...', '{"uid":2,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:46:09 pid:4644 Worker[4644] process terminated
+2020-10-27 11:46:09 pid:4643 worker[ZSFFBusinessWorker:4644] exit with status 64000
+2020-10-27 11:46:17 pid:4778 Exception: $_SESSION['room_id'] not set. client_ip:127.0.0.1 in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:105
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010b57000...', '{"uid":2,"msg_t...')
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b57000...', '{"uid":2,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #80)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#12 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#19 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#20 {main}
+2020-10-27 11:46:17 pid:4778 Worker[4778] process terminated
+2020-10-27 11:46:17 pid:4643 worker[ZSFFBusinessWorker:4778] exit with status 64000
+2020-10-27 11:49:10 pid:4645 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:91
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(91): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 91, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #84)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:49:10 pid:4645 Worker[4645] process terminated
+2020-10-27 11:49:10 pid:4643 worker[ZSFFBusinessWorker:4645] exit with status 64000
+2020-10-27 11:51:03 pid:6980 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:91
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(91): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 91, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #84)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:51:03 pid:6980 Worker[6980] process terminated
+2020-10-27 11:51:03 pid:4643 worker[ZSFFBusinessWorker:6980] exit with status 64000
+2020-10-27 11:51:21 pid:4647 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:91
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(91): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 91, Array)
+#1 [internal function]: Events::onMessage('7f0000010b54000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b54000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #78)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#18 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#19 {main}
+2020-10-27 11:51:21 pid:4647 Worker[4647] process terminated
+2020-10-27 11:51:21 pid:4643 worker[ZSFFBusinessWorker:4647] exit with status 64000
+2020-10-27 11:51:51 pid:8591 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:77
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(77): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 77, Array)
+#1 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #86)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:51:51 pid:8591 Worker[8591] process terminated
+2020-10-27 11:51:51 pid:4643 worker[ZSFFBusinessWorker:8591] exit with status 64000
+2020-10-27 11:52:05 pid:8966 think\exception\ErrorException: Undefined index: type in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:77
+Stack trace:
+#0 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php(77): think\Error::appError(8, 'Undefined index...', '/www/wwwroot/zs...', 77, Array)
+#1 [internal function]: Events::onMessage('7f0000010b57000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b57000...', '{"uid":3,"msg_t...')
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #85)
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#12 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#13 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#19 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#20 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#21 {main}
+2020-10-27 11:52:05 pid:8966 Worker[8966] process terminated
+2020-10-27 11:52:05 pid:4643 worker[ZSFFBusinessWorker:8966] exit with status 64000
+2020-10-27 11:53:01 pid:9846 Workerman[think socket] stop 
+2020-10-27 11:53:01 pid:9846 Workerman[think socket] is stopping ...
+2020-10-27 11:53:01 pid:4643 Workerman[think] stopping ...
+2020-10-27 11:53:01 pid:4643 Workerman[think] has been stopped
+2020-10-27 11:53:01 pid:9846 Workerman[think socket] stop success
+2020-10-27 11:53:02 pid:9860 Workerman[think socket] start in DAEMON mode
+2020-10-27 12:00:27 pid:15364 Workerman[think socket] stop 
+2020-10-27 12:00:27 pid:15364 Workerman[think socket] is stopping ...
+2020-10-27 12:00:27 pid:9862 Workerman[think] stopping ...
+2020-10-27 12:00:27 pid:9862 Workerman[think] has been stopped
+2020-10-27 12:00:27 pid:15364 Workerman[think socket] stop success
+2020-10-27 12:00:29 pid:15388 Workerman[think socket] start in DAEMON mode
+2020-10-27 12:07:34 pid:20655 Workerman[think socket] stop 
+2020-10-27 12:07:34 pid:20655 Workerman[think socket] is stopping ...
+2020-10-27 12:07:34 pid:15390 Workerman[think] stopping ...
+2020-10-27 12:07:34 pid:15390 Workerman[think] has been stopped
+2020-10-27 12:07:34 pid:20655 Workerman[think socket] stop success
+2020-10-27 12:07:36 pid:20674 Workerman[think socket] start in DAEMON mode
+2020-10-27 12:52:13 pid:20917 Workerman[think socket] stop 
+2020-10-27 12:52:13 pid:20917 Workerman[think socket] is stopping ...
+2020-10-27 12:52:13 pid:20676 Workerman[think] stopping ...
+2020-10-27 12:52:13 pid:20676 Workerman[think] has been stopped
+2020-10-27 12:52:13 pid:20917 Workerman[think socket] stop success
+2020-10-27 12:52:15 pid:20946 Workerman[think socket] start in DAEMON mode
+2020-10-27 19:42:23 pid:20951 Exception: $message_data['room_id'] not set. client_ip:127.0.0.1 $message:{"uid":2,"msg_type":"login","nickname":"å¥‹æ–—é’æ˜¥","avatar":"https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FK4Yk9ftx4XObyUzhrSKmDzojKicJHukXB1gSbdS3nIkKYIzLQeBFDORtibMN4l1nHDYicRItFG8KysB23PNtv7usA%2F132","live_type":"course"} in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:59
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010b56000...', '{"uid":2,"msg_t...')
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b56000...', '{"uid":2,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #81)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-27 19:42:23 pid:20951 Worker[20951] process terminated
+2020-10-27 19:42:23 pid:20948 worker[ZSFFBusinessWorker:20951] exit with status 64000
+2020-10-28 18:56:16 pid:20952 Exception: $message_data['room_id'] not set. client_ip:127.0.0.1 $message:{"uid":3,"msg_type":"login","nickname":"HX","avatar":"https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FQ0j4TwGTfTKTJEia7U5mWw2OoTl3Ok6fibqD3QGFicetaEwsTjLs4ApoOLKO3Y7bCXbVJyu1qQzEdLKW5ZoNkBoWg%2F132","live_type":"course"} in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:59
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010b55000...', '{"uid":3,"msg_t...')
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #79)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-28 18:56:16 pid:20952 Worker[20952] process terminated
+2020-10-28 18:56:16 pid:20948 worker[ZSFFBusinessWorker:20952] exit with status 64000
+2020-10-29 11:31:39 pid:13587 Exception: $message_data['room_id'] not set. client_ip:127.0.0.1 $message:{"uid":3,"msg_type":"login","nickname":"HX","avatar":"https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FQ0j4TwGTfTKTJEia7U5mWw2OoTl3Ok6fibqD3QGFicetaEwsTjLs4ApoOLKO3Y7bCXbVJyu1qQzEdLKW5ZoNkBoWg%2F132","live_type":"course"} in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:59
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010b54000...', '{"uid":3,"msg_t...')
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b54000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #83)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1675): Workerman\Worker::forkWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1624): Workerman\Worker::monitorWorkersForLinux()
+#11 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(548): Workerman\Worker::monitorWorkers()
+#12 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#17 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#18 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#19 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#20 {main}
+2020-10-29 11:31:39 pid:13587 Worker[13587] process terminated
+2020-10-29 11:31:39 pid:20948 worker[ZSFFBusinessWorker:13587] exit with status 64000
+2020-10-29 11:32:26 pid:20949 Exception: $message_data['room_id'] not set. client_ip:127.0.0.1 $message:{"uid":3,"msg_type":"login","nickname":"HX","avatar":"https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FQ0j4TwGTfTKTJEia7U5mWw2OoTl3Ok6fibqD3QGFicetaEwsTjLs4ApoOLKO3Y7bCXbVJyu1qQzEdLKW5ZoNkBoWg%2F132","live_type":"course"} in /www/wwwroot/zsff.sxjiangyan.com/application/livechat/starter/Events.php:59
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010b57000...', '{"uid":3,"msg_t...')
+#1 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b57000...', '{"uid":3,"msg_t...')
+#2 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Connection/TcpConnection.php(656): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Events/Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #83)
+#4 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(2408): Workerman\Events\Select->loop()
+#5 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/gateway-worker/src/BusinessWorker.php(197): Workerman\Worker->run()
+#6 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1541): GatewayWorker\BusinessWorker->run()
+#7 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1371): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#8 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(1345): Workerman\Worker::forkWorkersForLinux()
+#9 /www/wwwroot/zsff.sxjiangyan.com/vendor/workerman/workerman/Worker.php(546): Workerman\Worker::forkWorkers()
+#10 /www/wwwroot/zsff.sxjiangyan.com/application/livechat/controller/Socket.php(58): Workerman\Worker::runAll()
+#11 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/console/Command.php(175): app\livechat\controller\Socket->execute(Object(think\console\Input), Object(think\console\Output))
+#12 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(674): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(242): think\Console->doRunCommand(Object(app\livechat\controller\Socket), Object(think\console\Input), Object(think\console\Output))
+#14 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(185): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/library/think/Console.php(145): think\Console->run()
+#16 /www/wwwroot/zsff.sxjiangyan.com/thinkphp/console.php(20): think\Console::init()
+#17 /www/wwwroot/zsff.sxjiangyan.com/think(17): require('/www/wwwroot/zs...')
+#18 {main}
+2020-10-29 11:32:26 pid:20949 Worker[20949] process terminated
+2020-10-29 11:32:26 pid:20948 worker[ZSFFBusinessWorker:20949] exit with status 64000
+2020-11-08 06:15:30 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-08 11:51:25 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-09 13:05:15 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-10 03:21:33 pid:20957 Register auth timeout (45.64.128.160). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-13 17:06:50 pid:20957 Bad request for Register service. Request info(IP:45.93.201.126, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-14 04:30:13 pid:20957 Bad request for Register service. Request info(IP:45.93.201.126, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-15 12:19:41 pid:20957 Bad request for Register service. Request info(IP:94.232.40.110, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-16 00:46:30 pid:20957 Bad request for Register service. Request info(IP:94.232.40.110, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-16 06:03:07 pid:20957 Register auth timeout (185.153.199.102). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-16 18:14:04 pid:20957 Bad request for Register service. Request info(IP:185.153.199.102, Request Buffer:GET /_ping HTTP/1.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-20 02:47:02 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-20 05:48:54 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-21 01:56:25 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-21 08:05:59 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-21 15:56:06 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-22 04:25:17 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-24 01:35:04 pid:20957 Bad request for Register service. Request info(IP:185.202.1.172, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-24 19:47:41 pid:20957 Bad request for Register service. Request info(IP:185.202.1.172, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-25 14:04:26 pid:20957 Bad request for Register service. Request info(IP:188.124.36.157, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-26 22:49:57 pid:20957 Bad request for Register service. Request info(IP:185.202.2.42, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-28 07:54:54 pid:20957 Bad request for Register service. Request info(IP:94.102.49.57, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html
+2020-11-29 14:35:50 pid:20957 Bad request for Register service. Request info(IP:94.102.49.57, Request Buffer:  /*à     Cookie: mstshash=Administr). See http://doc2.workerman.net/register-auth-timeout.html

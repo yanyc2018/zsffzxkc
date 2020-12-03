@@ -1,0 +1,119 @@
+{include file="public/header" /}
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="start" class="layui-input" onfocus="wk.lay_date(this);" placeholder="开始日期">
+                    </div>
+                    <div class="layui-form-mid">
+                        -
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="end" class="layui-input" onfocus="wk.lay_date(this);" placeholder="结束日期">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <select name="key"  lay-search="">
+                            <option  value="">选择管理员</option>
+                            {volist name="search_user" id="v"}
+                                <option value="{$key}" {if condition="$val eq $key"}selected{/if}>{$v}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <button class="layui-btn" lay-submit="" lay-filter="LAY-search">立即搜索</button>
+                        <button  class="layui-btn layui-btn-normal" id="empty"  lay-submit="" lay-filter="LAY-search">重置</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="layui-btn layui-btn-danger layuiBtn" data-type="getCheckData" >
+                    <i class="fa fa-trash-o"></i> 批量删除
+                </button>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="LAY-table-manage" lay-filter="LAY-table-manage"></table>
+            <!--操作模板-->
+            <script type="text/html" id="opeBar">
+                <a class="layui-btn layui-btn-danger layui-btn-xs" title="删除" onclick="wk.confirm('{{d.log_id}}','{:url('del_log')}')"><i class="fa fa-trash-o"></i></a>
+            </script>
+            <!--状态模板-->
+            <script type="text/html" id="staBar">
+                {{# if(d.status==200){ }}
+                    <span class="layui-badge layui-bg-green">操作成功</span>
+                {{# }else{ }}
+                    <span class="layui-badge">操作失败</span>
+                {{# } }}
+            </script>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    layui.use(['index', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+        table.render({
+            elem: '#LAY-table-manage'
+            , url: '{:url("Log/operate_log")}'
+            ,response: {
+                statusCode: 220 //成功的状态码，默认：0
+            }
+            , page: true
+            , even: false //开启隔行背景
+            , size: 'lg' //sm小尺寸的表格 lg大尺寸
+            // ,width:100
+            , autoSort: false
+            , height: "full-220"
+            , cellMinWidth: 150
+            , limits: [10, 20, 30, 40, 50]
+            , limit: "{:config('pages')}"
+            , loading: true
+            , id: 'LAY-table'
+            , cols: [[
+                {type: 'checkbox', fixed: 'left',}
+                , {type:'numbers', width: 80, title: '序号'}
+                , {field: 'admin_id', width: 80, title: '用户ID', align: 'center'}
+                , {field: 'admin_name', width: '', title: '操作用户', align: 'center', templet: '#imgTpl'}
+                , {field: 'description', width: 300, title: '描述', align: 'center', templet: '#titleTpl'}
+                , {field: 'ip', width: '', title: '操作IP', align: 'center'}
+                , {field: 'ipaddr', width: '', title: '地址', align: 'center'}
+                , {field: 'add_time', width: 170, title: '操作时间', sort: true, align: 'center',templet:"<div>{{layui.util.toDateString(d.add_time*1000,'yyyy年MM月dd日')}}</div>"}
+                , {field: 'status',fixed: 'right', width: 100, title: '状态', align: 'center', templet: '#staBar'}
+                , {fixed: 'right', width: 60, title: '操作', align: 'center', toolbar: '#opeBar'}
+            ]]
+        });
+        //事件
+        var active = {
+            getCheckData: function(){
+                //批量删除
+                wk.batchDel(getIds(),"{:url('batchDelLog')}");
+            }
+        };
+
+        $('.layuiBtn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        var getIds = function () {
+            var ids = [];
+            var checkStatus = table.checkStatus('LAY-table')
+                ,data = checkStatus.data;
+            $.each(data,function(index,item){
+                ids.push(item['log_id'])
+            });
+            return ids;
+        }
+    });
+</script>
+</body>
+</html>
