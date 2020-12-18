@@ -9,36 +9,10 @@ use app\index\controller\Base;
 use think\Controller;
 use think\Db;
 use Payment\Wechat;
-use Alipay\EasySDK\Kernel\Factory;
-use Alipay\EasySDK\Kernel\Config;
+
 class Pay extends  Base
 {
-    //微信支付回调
-    public function wechat_notify(){
-        $testxml  = file_get_contents("php://input");  //接收微信发送的支付成功信息
-        $result = $this->xmlToArray($testxml);
 
-        $data1=array(
-            'is_pay'=>1,
-            'paytime'=>time(),
-            'paydetail'=>json_encode($result)
-        );
-        if($result['trade_type'] == 'JSAPI' || $result['trade_type'] == 'APP'){
-            if($result['result_code'] == 'SUCCESS' && $result['return_code'] == 'SUCCESS'){
-                echo 'SUCCESS';
-                $res=Db::name('mediaorder')
-                    ->where('orderid',$result['out_trade_no'])
-                    ->update($data1);
-                if($res){
-                    $this->check_order($result['out_trade_no']);
-                    $this->paysuccessmsg($result['out_trade_no']);
-                }
-
-            }else{
-                echo "fail";
-            }
-        }
-    }
 
     private function paysuccessmsg($orderid){
         $uniacid=1;
@@ -148,35 +122,7 @@ class Pay extends  Base
         $result = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
         return $result;
     }
-    //支付宝支付异步回调
-    public function alipay_notify(){
-        $parameters=input('post.');
-        if($parameters['trade_status'] == 'TRADE_FINISHED' || $parameters['trade_status'] == 'TRADE_SUCCESS') {
 
-            $data1=array(
-                'is_pay'=>1,
-                'paytime'=>time(),
-                'paydetail'=>json_encode($parameters)
-            );
-            $res=Db::name('mediaorder')
-                ->where('orderid',$parameters['out_trade_no'])
-                ->update($data1);
-            if($res){
-                $this->check_order($parameters['out_trade_no']);
-                $this->paysuccessmsg($parameters['out_trade_no']);
-                $this->Yjset($parameters['out_trade_no']);
-                $this->Jsmoney($parameters['out_trade_no']);
-            }
-            echo "success";
-        }else{
-            echo "fail";
-        }
-    }
-    //支付宝H5同步回调
-    public function alipay_return(){
-        $returnUrl = '';//填写您的支付宝H5回调URL author QQ:6133848
-        header('Location:'.$returnUrl);
-    }
     private function getOptions()
     {
         $options = new Config();
