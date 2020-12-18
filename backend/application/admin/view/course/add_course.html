@@ -402,6 +402,7 @@
                 $('.layui-btn').addClass('layui-disabled').attr('disabled','disabled');
                 var content = tinymce.get('demoEditor').getContent();
                 data.field['introduce']=content
+                data.field['is_sk']=data.field['is_sk']?data.field['is_sk']:0
                 $.ajax({
                     url:"{:url('add_course')}",
                     type:'post',
