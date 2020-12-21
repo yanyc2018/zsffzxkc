@@ -497,38 +497,6 @@ CREATE TABLE `jy_set_app` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for jy_set_h5
--- ----------------------------
-
-CREATE TABLE `jy_set_h5` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `acid` int(11) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `url` varchar(255) DEFAULT NULL,
-  `appid` varchar(200) DEFAULT NULL,
-  `appsecret` varchar(255) DEFAULT NULL,
-  `mchid` varchar(100) DEFAULT NULL,
-  `paysecret` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
-
-
--- ----------------------------
--- Table structure for jy_set_smallapp
--- ----------------------------
-
-CREATE TABLE `jy_set_smallapp` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `acid` int(11) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `url` varchar(255) DEFAULT NULL,
-  `appid` varchar(200) DEFAULT NULL,
-  `appsecret` varchar(255) DEFAULT NULL,
-  `mchid` varchar(100) DEFAULT NULL,
-  `paysecret` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for jy_study_time
