@@ -121,6 +121,20 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-required">签到兑换积分：</label>
+                        <div class="layui-input-block">
+                            <div style="display: flex;">
+                                <div style="display: flex; margin-right: 20px;justify-content: center;align-items: center; ">
+                                    <p class="pictureNomer">签到一次获得</p>
+                                </div>
+                                <div style="display: flex;justify-content: center;align-items: center; ">
+                                    <p class="pictureNomer"></p><input type="number" name="qdjf_bl" class="layui-input"
+                                                                       style="flex: 15;" lay-verify="required" required min="0"  value="{php}echo $item['qdjf_bl'];{/php}" /><span>&nbsp;&nbsp;积分</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
                         <div class="layui-input-block" style="display: flex;
                     justify-content: space-around;
                 ">
