@@ -5,7 +5,7 @@
 ###开源不易 麻烦各位给个Star噢！谢谢
 
 ##说明文档
-####1.代码分为前端frontend和后端backend；如需数据库及安装服务请拍体验版：[https://market.w7.cc/detail?id=2768&type=0](https://market.w7.cc/detail?id=2768&type=0)
+####1.代码分为前端frontend和后端backend；如需数据库及安装服务请拍体验版：[https://h5.sxjiangyan.com/pages/mall/shop-details/shop-details?id=20](https://h5.sxjiangyan.com/pages/mall/shop-details/shop-details?id=20)
 ####2.前端采用uniapp开发，后端采用tp5+mysql开发；
 前端下载地址：[https://ext.dcloud.net.cn/plugin?id=3601](https://ext.dcloud.net.cn/plugin?id=3601)
 ####3.支付方式：微信支付+支付宝支付+余额支付（H5+小程序+APP均支持）；
