@@ -12,11 +12,23 @@ class Set extends  Base
 {
     public function base_set(){
         $map=array(
-          'acid'=>1,
+            'acid'=>1,
         );
         $data=Db::name('set')
             ->where($map)
             ->find();
+        $smallapp=Db::name('set_smallapp')
+            ->where($map)
+            ->find();
+        if(!empty($smallapp)){
+            $data['smallapp']=$smallapp;
+        }
+        $h5=Db::name('set_h5')
+            ->where($map)
+            ->find();
+        if(!empty($h5)){
+            $data['h5']=$h5;
+        }
         $this->result(0,'获取基础设置数据成功',$data,0,'json');
     }
 }
