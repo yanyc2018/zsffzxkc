@@ -5,9 +5,8 @@
 ###开源不易 麻烦各位给个Star噢！谢谢
 
 ##说明文档
-####1.代码分为前端frontend和后端backend；如需数据库或安装服务请进：[https://market.w7.cc/detail?id=2768&type=0](https://market.w7.cc/detail?id=2768&type=0)
+####1.代码分为前端frontend和后端backend；如需数据库或安装服务请关注《匠言知识付费》公众号进行下单；
 ####2.前端采用uniapp开发，后端采用tp5+mysql开发；
-前端下载地址：[https://ext.dcloud.net.cn/plugin?id=3601](https://ext.dcloud.net.cn/plugin?id=3601)
 ####3.支付方式：微信支付+支付宝支付+余额支付（H5+小程序+APP均支持）；
 ####4.服务器建议采用centos7以上系统、2G内存、40GB硬盘、5M带宽、部署Nginx+mySql;
 ####5.软件支持版本：H5+微信公众号+微信、支付宝、百度、头条、抖音、360、QQ小程序+安卓APP、苹果APP；
